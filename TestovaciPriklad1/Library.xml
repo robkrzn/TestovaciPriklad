@@ -19,12 +19,12 @@
     </Borrowed>
   </Book>
   <Book id="3">
-    <Name>Skusobna Kniha</Name>
-    <Author>Robert Krizan</Author>
+    <Name>Krvavé sonety</Name>
+    <Author>Pavol Országh Hviezdoslav</Author>
     <Borrowed>
-      <FirstName>Robert</FirstName>
-      <LastName>Krizan</LastName>
-      <From>25.8.2021</From>
+      <FirstName>Matej</FirstName>
+      <LastName>Tretí</LastName>
+      <From>1.2.2017</From>
     </Borrowed>
   </Book>
   <Book id="4">
@@ -46,17 +46,17 @@
     </Borrowed>
   </Book>
   <Book id="6">
-    <Name>Skusobna Kniha</Name>
-    <Author>Robert Krizan</Author>
+    <Name>Živý biè</Name>
+    <Author>Milo Urban</Author>
     <Borrowed>
-      <FirstName>Robert</FirstName>
-      <LastName>Krizan</LastName>
-      <From>25.8.2021</From>
+      <FirstName />
+      <LastName />
+      <From />
     </Borrowed>
   </Book>
   <Book id="7">
-    <Name>Skusobna Kniha</Name>
-    <Author>Robert Krizan</Author>
+    <Name>Živý biè</Name>
+    <Author>Milo Urban</Author>
     <Borrowed>
       <FirstName>Robert</FirstName>
       <LastName>Krizan</LastName>

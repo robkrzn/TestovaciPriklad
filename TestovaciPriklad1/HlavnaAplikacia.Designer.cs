@@ -315,6 +315,7 @@ namespace TestovaciPriklad1
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.label1);
             this.Name = "HlavnaAplikacia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Správa zapožičaných kníh";
             this.Load += new System.EventHandler(this.HlavnaAplikacia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();

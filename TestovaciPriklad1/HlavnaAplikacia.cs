@@ -9,31 +9,39 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
-using System.Xml.Linq;
-using System.Xml.Serialization;
+//using System.Xml.Linq;
+//using System.Xml.Serialization;
 
 namespace TestovaciPriklad1
 {
+    /// <summary>
+    /// Okno s aplikáciou na obsluhu databáze
+    /// </summary>
     public partial class HlavnaAplikacia : Form
     {
         /// <summary>
-        /// Databaza knih
+        /// List ktorý tvorí databázu kníh
         /// </summary>
         private List<Book> library = new List<Book>();
-
+        private string file;
+        /// <summary>
+        /// Konštruktor okna s hlavnou aplikacou
+        /// </summary>
         public HlavnaAplikacia()
         {
             InitializeComponent();
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             Encoding.GetEncoding("windows-1250");
+            this.file = System.Configuration.ConfigurationManager.AppSettings["file"];
 
-            Login login = new Login();
-            login.ShowDialog();
+            //Login login = new Login();
+            //login.ShowDialog();
 
             nacitajDatabazu();
         }
         /// <summary>
-        /// Funkcia pre nacitanie databazy
+        /// Metóda pre načítanie databáze z XML súboru.
+        /// Po načítani sa automaticky prevedú aj do tabuľky.
         /// </summary>
         /// <returns>Navrati uspesnost operacie</returns>
         private bool nacitajDatabazu() {
@@ -43,7 +51,7 @@ namespace TestovaciPriklad1
             try
             {
                 DataSet dataset = new DataSet();
-                dataset.ReadXml(@"C:\Users\rober\source\repos\TestovaciPriklad1\TestovaciPriklad1\Library.xml");
+                dataset.ReadXml(this.file);
                 for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
                 {
                     Book kniha = new Book(Int16.Parse(dataset.Tables[0].Rows[i][3].ToString()), dataset.Tables[0].Rows[i][0].ToString(), dataset.Tables[0].Rows[i][1].ToString(),
@@ -54,10 +62,15 @@ namespace TestovaciPriklad1
                 vypisDatabaze();
                 return true;
             }
-            catch (Exception ex) {
+            catch (IOException ex) {
+                MessageBox.Show("Chyba pri nacitani databaze " + ex.ToString());
                 return false;
             }
         }
+        /// <summary>
+        /// Pomocná metóda pre vypis databáze do tabulky.
+        /// Podľa zaklinutých ChceckBoxov sa zobrazia príslušné dáta v tabulke.
+        /// </summary>
         private void vypisDatabaze() {
             for (int i = 0; i < library.Count; i++)
             {
@@ -77,39 +90,59 @@ namespace TestovaciPriklad1
                 }
             }
         }
+        /// <summary>
+        /// Metóda na uloženie databáze do XML súboru
+        /// </summary>
+        /// <returns>Úspešnosť zápisu</returns>
         private bool ulozDatabazu(){
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
             settings.Encoding = Encoding.GetEncoding("windows-1250");
-            using (XmlWriter xw = XmlWriter.Create(@"C:\Users\rober\source\repos\TestovaciPriklad1\TestovaciPriklad1\Library.xml", settings))
+            //using (XmlWriter xw = XmlWriter.Create(@"C:\Users\rober\source\repos\TestovaciPriklad1\TestovaciPriklad1\Library.xml", settings))
+            try
             {
-                xw.WriteStartDocument();
-                xw.WriteStartElement("Library");
-                foreach (Book b in library)
+                using (XmlWriter xw = XmlWriter.Create(this.file, settings))
                 {
-                    xw.WriteStartElement("Book");
-                    xw.WriteAttributeString("id", b.id.ToString());
-                    xw.WriteElementString("Name", b.Name);
-                    xw.WriteElementString("Author", b.Author);
-                    xw.WriteStartElement("Borrowed");
-                    xw.WriteElementString("FirstName", b.borrowed.FirstName);
-                    xw.WriteElementString("LastName", b.borrowed.LastName);
-                    xw.WriteElementString("From", b.borrowed.From);
+                    xw.WriteStartDocument();
+                    xw.WriteStartElement("Library");
+                    foreach (Book b in library)
+                    {
+                        xw.WriteStartElement("Book");
+                        xw.WriteAttributeString("id", b.id.ToString());
+                        xw.WriteElementString("Name", b.Name);
+                        xw.WriteElementString("Author", b.Author);
+                        xw.WriteStartElement("Borrowed");
+                        xw.WriteElementString("FirstName", b.borrowed.FirstName);
+                        xw.WriteElementString("LastName", b.borrowed.LastName);
+                        xw.WriteElementString("From", b.borrowed.From);
+                        xw.WriteEndElement();
+                        xw.WriteEndElement();
+                    }
                     xw.WriteEndElement();
-                    xw.WriteEndElement();
+                    xw.WriteEndDocument();
+                    xw.Flush();
+
+                    return true;
                 }
-                xw.WriteEndElement();
-                xw.WriteEndDocument();
-                xw.Flush();
             }
-            return false;
+            catch (IOException ex)
+            {
+                MessageBox.Show("Chyba pri ukladani databaze "+ex.ToString());
+                return false;
+            }
         }
 
         private void HlavnaAplikacia_Load(object sender, EventArgs e)
         {
             
         }
-
+        /// <summary>
+        /// Oblužná metóda stlačenia tlačidla pridať.
+        /// Po stlačení sa uložia vyplnené záznamy do databáze.
+        /// Databáza sa následne uloží a opäť načíta.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addButton_Click(object sender, EventArgs e)
         {
             if (bookTextBox.Text != "" && authorTextBox.Text != "")
@@ -124,8 +157,16 @@ namespace TestovaciPriklad1
                     nacitajDatabazu();
                 }else MessageBox.Show("Datum je z búcnosti");
             }
-            else MessageBox.Show("Neje zadany autor alebo dielo");
+            else MessageBox.Show("Nieje zadany autor alebo dielo");
         }
+        /// <summary>
+        /// Obslužná metóda tláčidla vymazať.
+        /// Vybraný objekt sa po stlačení vymaže.
+        /// Pred vymazaním sa zobrazí dopytovacie sa okno pre overenie rozhodnutia.
+        /// Po vymazaní sa nová databáza uloží a opäť načíta.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void removeButton_Click(object sender, EventArgs e)
         {
             if (idTextBox.ToString() != "")
@@ -149,6 +190,14 @@ namespace TestovaciPriklad1
                 MessageBox.Show("Nevybral si žiadny záznam");
             }
         }
+        /// <summary>
+        /// Obslužná metóda tláčidla upraviť.
+        /// Upravené dáta sa uložia do databáze.
+        /// Po uložení sa zobrazí informatívne okno o dokončení operácie.
+        /// Databáza sa následne uloží a opätovne načíta.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void editButton_Click(object sender, EventArgs e)
         {
             if (idTextBox.ToString() != "") {
@@ -168,6 +217,10 @@ namespace TestovaciPriklad1
             else
                 MessageBox.Show("Nevybral si žiadny záznam");
         }
+        /// <summary>
+        /// Metóda pre zistenie súčasného najväčšieho ID.
+        /// </summary>
+        /// <returns></returns>
         private int zistiNajvysieID() {
             int id=0;
             foreach (Book b in library) {
@@ -176,7 +229,11 @@ namespace TestovaciPriklad1
             }
             return id;
         }
-
+        /// <summary>
+        /// CheckBox pre zobrazenie záznamov s knihami ktoré sú k dispozícii v knižnici.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void freeBookCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (freeBookCheckBox.Checked == true) {
@@ -185,7 +242,11 @@ namespace TestovaciPriklad1
             nacitajDatabazu();
 
         }
-
+        /// <summary>
+        /// ChceckBox pre zobrazenie záznamov s knihami ktoré sú požičáné.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void borrowedBookCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (borrowedBookCheckBox.Checked == true)
@@ -194,7 +255,11 @@ namespace TestovaciPriklad1
             }
             nacitajDatabazu();
         }
-
+        /// <summary>
+        /// Po zakliknutí objektu v tabulke sa zobrazia dáta do TextBoxov pod tabulkou
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             idTextBox.Text = dataGridView.SelectedRows[0].Cells[0].Value.ToString();

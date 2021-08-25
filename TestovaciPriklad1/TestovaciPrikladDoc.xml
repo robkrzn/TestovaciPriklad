@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TestovaciPriklad1</name>
+    </assembly>
+    <members>
+        <member name="T:TestovaciPriklad1.Book">
+            <summary>
+            Trieda pre objekt s informáciami o knihe.
+            </summary>
+        </member>
+        <member name="P:TestovaciPriklad1.Book.id">
+            <summary>
+            Id knihy
+            </summary>
+        </member>
+        <member name="P:TestovaciPriklad1.Book.Name">
+            <summary>
+            Nazov knihy
+            </summary>
+        </member>
+        <member name="P:TestovaciPriklad1.Book.Author">
+            <summary>
+            Autor knihy
+            </summary>
+        </member>
+        <member name="P:TestovaciPriklad1.Book.borrowed">
+            <summary>
+            Informacie o zapozicani hnihy
+            </summary>
+        </member>
+        <member name="M:TestovaciPriklad1.Book.#ctor(System.Int32,System.String,System.String,TestovaciPriklad1.Borrowed)">
+            <summary>
+            Objekt pre uloženie inforácii o príslušnej knihe.
+            </summary>
+            <param name="id">ID knihy</param>
+            <param name="Name">Názov knihy</param>
+            <param name="Author">Autor knihy</param>
+            <param name="borrowed">Informácie o človekovi čo si knihu zapožičal</param>
+        </member>
+        <member name="T:TestovaciPriklad1.Borrowed">
+            <summary>
+            Trieda pre objekt s informáciami o zapožičaní knihy.
+            </summary>
+        </member>
+        <member name="F:TestovaciPriklad1.Borrowed.FirstName">
+            <summary>
+            Meno človeka čo si zapožical knihu
+            </summary>
+        </member>
+        <member name="F:TestovaciPriklad1.Borrowed.LastName">
+            <summary>
+            Priezvisko človeka čo si zapožičal knihu
+            </summary>
+        </member>
+        <member name="F:TestovaciPriklad1.Borrowed.From">
+            <summary>
+            Datum zapožičania knihy
+            </summary>
+        </member>
+        <member name="M:TestovaciPriklad1.Borrowed.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Objekt pre uloženie informácii o zapožičání knihy
+            </summary>
+            <param name="FirstName">Meno človeka čo si knihu požičal</param>
+            <param name="LastName">Priezvisko človeka čo si knihu požičal</param>
+            <param name="From">Dátum kedy si knihu požičal</param>
+        </member>
+        <member name="T:TestovaciPriklad1.HlavnaAplikacia">
+            <summary>
+            Okno s aplikáciou na obsluhu databáze
+            </summary>
+        </member>
+        <member name="F:TestovaciPriklad1.HlavnaAplikacia.library">
+            <summary>
+            List ktorý tvorí databázu kníh
+            </summary>
+        </member>
+        <member name="M:TestovaciPriklad1.HlavnaAplikacia.#ctor">
+            <summary>
+            Konštruktor okna s hlavnou aplikacou
+            </summary>
+        </member>
+        <member name="M:TestovaciPriklad1.HlavnaAplikacia.nacitajDatabazu">
+            <summary>
+            Metóda pre načítanie databáze z XML súboru.
+            Po načítani sa automaticky prevedú aj do tabuľky.
+            </summary>
+            <returns>Navrati uspesnost operacie</returns>
+        </member>
+        <member name="M:TestovaciPriklad1.HlavnaAplikacia.vypisDatabaze">
+            <summary>
+            Pomocná metóda pre vypis databáze do tabulky.
+            Podľa zaklinutých ChceckBoxov sa zobrazia príslušné dáta v tabulke.
+            </summary>
+        </member>
+        <member name="M:TestovaciPriklad1.HlavnaAplikacia.ulozDatabazu">
+            <summary>
+            Metóda na uloženie databáze do XML súboru
+            </summary>
+            <returns>Úspešnosť zápisu</returns>
+        </member>
+        <member name="M:TestovaciPriklad1.HlavnaAplikacia.addButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Oblužná metóda stlačenia tlačidla pridať.
+            Po stlačení sa uložia vyplnené záznamy do databáze.
+            Databáza sa následne uloží a opäť načíta.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TestovaciPriklad1.HlavnaAplikacia.removeButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Obslužná metóda tláčidla vymazať.
+            Vybraný objekt sa po stlačení vymaže.
+            Pred vymazaním sa zobrazí dopytovacie sa okno pre overenie rozhodnutia.
+            Po vymazaní sa nová databáza uloží a opäť načíta.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TestovaciPriklad1.HlavnaAplikacia.editButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Obslužná metóda tláčidla upraviť.
+            Upravené dáta sa uložia do databáze.
+            Po uložení sa zobrazí informatívne okno o dokončení operácie.
+            Databáza sa následne uloží a opätovne načíta.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TestovaciPriklad1.HlavnaAplikacia.zistiNajvysieID">
+            <summary>
+            Metóda pre zistenie súčasného najväčšieho ID.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestovaciPriklad1.HlavnaAplikacia.freeBookCheckBox_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            CheckBox pre zobrazenie záznamov s knihami ktoré sú k dispozícii v knižnici.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TestovaciPriklad1.HlavnaAplikacia.borrowedBookCheckBox_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            ChceckBox pre zobrazenie záznamov s knihami ktoré sú požičáné.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TestovaciPriklad1.HlavnaAplikacia.dataGridView_CellContentClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            Po zakliknutí objektu v tabulke sa zobrazia dáta do TextBoxov pod tabulkou
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:TestovaciPriklad1.HlavnaAplikacia.components">
+            <summary>
+             Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TestovaciPriklad1.HlavnaAplikacia.Dispose(System.Boolean)">
+            <summary>
+             Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TestovaciPriklad1.HlavnaAplikacia.InitializeComponent">
+            <summary>
+             Required method for Designer support - do not modify
+             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:TestovaciPriklad1.Login">
+            <summary>
+            Trieda s objektom okna slúžiace pre prihlásenie
+            </summary>
+            <summary>
+            Okno ktore sluzi pre prihlasaenie
+            </summary>
+        </member>
+        <member name="F:TestovaciPriklad1.Login.meno">
+            <summary>
+            Meno uzivatela
+            </summary>
+        </member>
+        <member name="F:TestovaciPriklad1.Login.heslo">
+            <summary>
+            Heslo uzivatela
+            </summary>
+        </member>
+        <member name="M:TestovaciPriklad1.Login.#ctor">
+            <summary>
+            Okno pre prihlasovanie do aplikacie.
+            Po prihlaseni sa zobrazí hlavné okno.
+            </summary>
+        </member>
+        <member name="M:TestovaciPriklad1.Login.loginButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Tláčidlo pre prihlásenie.
+            Overí správnosť údajov.
+            Pri správne zadaných údajoch otvorí okno s aplikáciou.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:TestovaciPriklad1.Login.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TestovaciPriklad1.Login.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TestovaciPriklad1.Login.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:TestovaciPriklad1.Program.Main">
+            <summary>
+             The main entry point for the application.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,315 @@
+\hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia}{}\doxysection{Testovaci\+Priklad1.\+Hlavna\+Aplikacia Class Reference}
+\label{class_testovaci_priklad1_1_1_hlavna_aplikacia}\index{TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}}
+
+
+Okno s aplikáciou na obsluhu databáze  
+
+
+Inheritance diagram for Testovaci\+Priklad1.\+Hlavna\+Aplikacia\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_testovaci_priklad1_1_1_hlavna_aplikacia}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a3a4fe62dcfeacd72a192b30f03084b15}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a3a4fe62dcfeacd72a192b30f03084b15}} 
+{\bfseries Hlavna\+Aplikacia} ()
+\begin{DoxyCompactList}\small\item\em Konštruktor okna s hlavnou aplikacou \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_testovaci_priklad1_1_1_hlavna_aplikacia_a3c1af6feed3e39f4275b2bd07884df62}{Dispose}} (bool disposing)
+\begin{DoxyCompactList}\small\item\em Clean up any resources being used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_testovaci_priklad1_1_1_hlavna_aplikacia_a56e5b3f68d70feadaa7cf5e1bb74dec4}{nacitaj\+Databazu}} ()
+\begin{DoxyCompactList}\small\item\em Metóda pre načítanie databáze z XML súboru. Po načítani sa automaticky prevedú aj do tabuľky. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_ae76d962227a50b8289949982a53c24fc}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_ae76d962227a50b8289949982a53c24fc}} 
+void {\bfseries vypis\+Databaze} ()
+\begin{DoxyCompactList}\small\item\em Pomocná metóda pre vypis databáze do tabulky. Podľa zaklinutých Chceck\+Boxov sa zobrazia príslušné dáta v tabulke. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_testovaci_priklad1_1_1_hlavna_aplikacia_a6dbb211f58288d5995af5d3cf08ddc26}{uloz\+Databazu}} ()
+\begin{DoxyCompactList}\small\item\em Metóda na uloženie databáze do XML súboru \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a7f725fce2e19ea8a4ccf01a3ad049030}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a7f725fce2e19ea8a4ccf01a3ad049030}} 
+void {\bfseries Hlavna\+Aplikacia\+\_\+\+Load} (object sender, Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_testovaci_priklad1_1_1_hlavna_aplikacia_a6450a17005734d21cf290b8f74078eb1}{add\+Button\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Oblužná metóda stlačenia tlačidla pridať. Po stlačení sa uložia vyplnené záznamy do databáze. Databáza sa následne uloží a opäť načíta. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_testovaci_priklad1_1_1_hlavna_aplikacia_aed5b838f78cfecb96eb290e54147f297}{remove\+Button\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Obslužná metóda tláčidla vymazať. Vybraný objekt sa po stlačení vymaže. Pred vymazaním sa zobrazí dopytovacie sa okno pre overenie rozhodnutia. Po vymazaní sa nová databáza uloží a opäť načíta. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_testovaci_priklad1_1_1_hlavna_aplikacia_a4f633a5ad5a6e47fe521320be1691786}{edit\+Button\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Obslužná metóda tláčidla upraviť. Upravené dáta sa uložia do databáze. Po uložení sa zobrazí informatívne okno o dokončení operácie. Databáza sa následne uloží a opätovne načíta. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_testovaci_priklad1_1_1_hlavna_aplikacia_aab769e17f51342b1d176bf39ba38d6f5}{zisti\+Najvysie\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Metóda pre zistenie súčasného najväčšieho ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_testovaci_priklad1_1_1_hlavna_aplikacia_a6ea868fe7a40822d711b143b76a0054b}{free\+Book\+Check\+Box\+\_\+\+Checked\+Changed}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Check\+Box pre zobrazenie záznamov s knihami ktoré sú k dispozícii v knižnici. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_testovaci_priklad1_1_1_hlavna_aplikacia_a7e1479daea282712a47310092333c3fa}{borrowed\+Book\+Check\+Box\+\_\+\+Checked\+Changed}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Chceck\+Box pre zobrazenie záznamov s knihami ktoré sú požičáné. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_testovaci_priklad1_1_1_hlavna_aplikacia_aecdcd0bf4ec127543d700b188efbc094}{data\+Grid\+View\+\_\+\+Cell\+Content\+Click}} (object sender, Data\+Grid\+View\+Cell\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Po zakliknutí objektu v tabulke sa zobrazia dáta do Text\+Boxov pod tabulkou \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_ab17b1dd85b5ffc6756370e2e4c3a6e50}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_ab17b1dd85b5ffc6756370e2e4c3a6e50}} 
+void {\bfseries Initialize\+Component} ()
+\begin{DoxyCompactList}\small\item\em Required method for Designer support -\/ do not modify the contents of this method with the code editor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_aa2775ec3533b5d6bc859c035b562c827}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_aa2775ec3533b5d6bc859c035b562c827}} 
+List$<$ \mbox{\hyperlink{class_testovaci_priklad1_1_1_book}{Book}} $>$ {\bfseries library} = new List$<$\mbox{\hyperlink{class_testovaci_priklad1_1_1_book}{Book}}$>$()
+\begin{DoxyCompactList}\small\item\em List ktorý tvorí databázu kníh \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a622929d2b08eaf858a9e470248026179}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a622929d2b08eaf858a9e470248026179}} 
+string {\bfseries file}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a2d8caf3e21aedd8a09b2b1da1554e369}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a2d8caf3e21aedd8a09b2b1da1554e369}} 
+System.\+Component\+Model.\+IContainer {\bfseries components} = null
+\begin{DoxyCompactList}\small\item\em Required designer variable. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_ab6a08ab9ba602fe945630adee1d6116d}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_ab6a08ab9ba602fe945630adee1d6116d}} 
+System.\+Windows.\+Forms.\+Label {\bfseries label1}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a4552b3691f4530f206b0e489215f6109}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a4552b3691f4530f206b0e489215f6109}} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View {\bfseries data\+Grid\+View}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a2e2bbf2e5def9acd09e6da32997f63fa}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a2e2bbf2e5def9acd09e6da32997f63fa}} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries id}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a5b3267ffc417959982ed2332d3fbeee7}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a5b3267ffc417959982ed2332d3fbeee7}} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries name}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a64e177d827866d9e2f1e6610230c74ed}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a64e177d827866d9e2f1e6610230c74ed}} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries author}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a0287c682eab4769c4c29bc66434a9c97}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a0287c682eab4769c4c29bc66434a9c97}} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries first\+Name}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a8670f1d3c1a2af4bffc71fa3c9840e69}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a8670f1d3c1a2af4bffc71fa3c9840e69}} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries last\+Name}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_aa2fd71429ed050d6848e0af1607011cb}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_aa2fd71429ed050d6848e0af1607011cb}} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries from}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_ac54f1b9441ffb63b02f3b4687582f905}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_ac54f1b9441ffb63b02f3b4687582f905}} 
+System.\+Windows.\+Forms.\+Binding\+Source {\bfseries binding\+Source1}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a062ca6615c7a228c148bce6b572c0b80}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a062ca6615c7a228c148bce6b572c0b80}} 
+System.\+Windows.\+Forms.\+Button {\bfseries add\+Button}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_ac996a4271f1de19fb755b0f53b7989ef}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_ac996a4271f1de19fb755b0f53b7989ef}} 
+System.\+Windows.\+Forms.\+Button {\bfseries remove\+Button}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a27b977452abd7b58f9f656b871d8daf0}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a27b977452abd7b58f9f656b871d8daf0}} 
+System.\+Windows.\+Forms.\+Button {\bfseries edit\+Button}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a53f71a0491fd9099535ef670507cffa8}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a53f71a0491fd9099535ef670507cffa8}} 
+System.\+Windows.\+Forms.\+Check\+Box {\bfseries free\+Book\+Check\+Box}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_ad4dc5af4cd12caf7b4b5454c36bba37a}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_ad4dc5af4cd12caf7b4b5454c36bba37a}} 
+System.\+Windows.\+Forms.\+Check\+Box {\bfseries borrowed\+Book\+Check\+Box}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a8e9bc8528aed8ef6da45a7dbd5a849bb}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a8e9bc8528aed8ef6da45a7dbd5a849bb}} 
+System.\+Windows.\+Forms.\+Group\+Box {\bfseries group\+Box1}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_ac29b6007dcdac0ca42a913a36855fdd1}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_ac29b6007dcdac0ca42a913a36855fdd1}} 
+System.\+Windows.\+Forms.\+Date\+Time\+Picker {\bfseries from\+Date\+Time\+Picker}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_ad9b08fb7ec2365f4d18c8112167659ad}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_ad9b08fb7ec2365f4d18c8112167659ad}} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries last\+Name\+Text\+Box}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a42c6bf0abdf6f29b089df43702acb4bb}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a42c6bf0abdf6f29b089df43702acb4bb}} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries name\+Text\+Box}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a692cd4dd2c0e3d46e8bed9819e3b3d59}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a692cd4dd2c0e3d46e8bed9819e3b3d59}} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries author\+Text\+Box}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_aaf426980e1a7c767fb81981d2ad7703e}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_aaf426980e1a7c767fb81981d2ad7703e}} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries book\+Text\+Box}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a969cf109496b86772b8f9594bb36d4c0}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a969cf109496b86772b8f9594bb36d4c0}} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries id\+Text\+Box}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a44f3fb670e8ee2ef00761dfb79646517}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a44f3fb670e8ee2ef00761dfb79646517}} 
+System.\+Windows.\+Forms.\+Label {\bfseries label7}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_ab64150b0563758af8e5e9c49763a7aef}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_ab64150b0563758af8e5e9c49763a7aef}} 
+System.\+Windows.\+Forms.\+Label {\bfseries label6}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_adb0d7450f6d1f8298451efcd9b9cdd19}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_adb0d7450f6d1f8298451efcd9b9cdd19}} 
+System.\+Windows.\+Forms.\+Label {\bfseries label5}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_ae48160fb029cb4ff297008a8ebe85033}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_ae48160fb029cb4ff297008a8ebe85033}} 
+System.\+Windows.\+Forms.\+Label {\bfseries label4}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a8135820ac6edc7529aaec7b478ae2417}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a8135820ac6edc7529aaec7b478ae2417}} 
+System.\+Windows.\+Forms.\+Label {\bfseries label3}
+\item 
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_abb53bbd41428726bbb1dd1f378ffc116}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_abb53bbd41428726bbb1dd1f378ffc116}} 
+System.\+Windows.\+Forms.\+Label {\bfseries label2}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Okno s aplikáciou na obsluhu databáze 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a6450a17005734d21cf290b8f74078eb1}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a6450a17005734d21cf290b8f74078eb1}} 
+\index{TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}!addButton\_Click@{addButton\_Click}}
+\index{addButton\_Click@{addButton\_Click}!TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}}
+\doxysubsubsection{\texorpdfstring{addButton\_Click()}{addButton\_Click()}}
+{\footnotesize\ttfamily void Testovaci\+Priklad1.\+Hlavna\+Aplikacia.\+add\+Button\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Oblužná metóda stlačenia tlačidla pridať. Po stlačení sa uložia vyplnené záznamy do databáze. Databáza sa následne uloží a opäť načíta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a7e1479daea282712a47310092333c3fa}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a7e1479daea282712a47310092333c3fa}} 
+\index{TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}!borrowedBookCheckBox\_CheckedChanged@{borrowedBookCheckBox\_CheckedChanged}}
+\index{borrowedBookCheckBox\_CheckedChanged@{borrowedBookCheckBox\_CheckedChanged}!TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}}
+\doxysubsubsection{\texorpdfstring{borrowedBookCheckBox\_CheckedChanged()}{borrowedBookCheckBox\_CheckedChanged()}}
+{\footnotesize\ttfamily void Testovaci\+Priklad1.\+Hlavna\+Aplikacia.\+borrowed\+Book\+Check\+Box\+\_\+\+Checked\+Changed (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Chceck\+Box pre zobrazenie záznamov s knihami ktoré sú požičáné. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_aecdcd0bf4ec127543d700b188efbc094}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_aecdcd0bf4ec127543d700b188efbc094}} 
+\index{TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}!dataGridView\_CellContentClick@{dataGridView\_CellContentClick}}
+\index{dataGridView\_CellContentClick@{dataGridView\_CellContentClick}!TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}}
+\doxysubsubsection{\texorpdfstring{dataGridView\_CellContentClick()}{dataGridView\_CellContentClick()}}
+{\footnotesize\ttfamily void Testovaci\+Priklad1.\+Hlavna\+Aplikacia.\+data\+Grid\+View\+\_\+\+Cell\+Content\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Data\+Grid\+View\+Cell\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Po zakliknutí objektu v tabulke sa zobrazia dáta do Text\+Boxov pod tabulkou 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a3c1af6feed3e39f4275b2bd07884df62}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a3c1af6feed3e39f4275b2bd07884df62}} 
+\index{TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Testovaci\+Priklad1.\+Hlavna\+Aplikacia.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Clean up any resources being used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disposing} & true if managed resources should be disposed; otherwise, false.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a4f633a5ad5a6e47fe521320be1691786}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a4f633a5ad5a6e47fe521320be1691786}} 
+\index{TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}!editButton\_Click@{editButton\_Click}}
+\index{editButton\_Click@{editButton\_Click}!TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}}
+\doxysubsubsection{\texorpdfstring{editButton\_Click()}{editButton\_Click()}}
+{\footnotesize\ttfamily void Testovaci\+Priklad1.\+Hlavna\+Aplikacia.\+edit\+Button\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Obslužná metóda tláčidla upraviť. Upravené dáta sa uložia do databáze. Po uložení sa zobrazí informatívne okno o dokončení operácie. Databáza sa následne uloží a opätovne načíta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a6ea868fe7a40822d711b143b76a0054b}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a6ea868fe7a40822d711b143b76a0054b}} 
+\index{TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}!freeBookCheckBox\_CheckedChanged@{freeBookCheckBox\_CheckedChanged}}
+\index{freeBookCheckBox\_CheckedChanged@{freeBookCheckBox\_CheckedChanged}!TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}}
+\doxysubsubsection{\texorpdfstring{freeBookCheckBox\_CheckedChanged()}{freeBookCheckBox\_CheckedChanged()}}
+{\footnotesize\ttfamily void Testovaci\+Priklad1.\+Hlavna\+Aplikacia.\+free\+Book\+Check\+Box\+\_\+\+Checked\+Changed (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Check\+Box pre zobrazenie záznamov s knihami ktoré sú k dispozícii v knižnici. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a56e5b3f68d70feadaa7cf5e1bb74dec4}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a56e5b3f68d70feadaa7cf5e1bb74dec4}} 
+\index{TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}!nacitajDatabazu@{nacitajDatabazu}}
+\index{nacitajDatabazu@{nacitajDatabazu}!TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}}
+\doxysubsubsection{\texorpdfstring{nacitajDatabazu()}{nacitajDatabazu()}}
+{\footnotesize\ttfamily bool Testovaci\+Priklad1.\+Hlavna\+Aplikacia.\+nacitaj\+Databazu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Metóda pre načítanie databáze z XML súboru. Po načítani sa automaticky prevedú aj do tabuľky. 
+
+\begin{DoxyReturn}{Returns}
+Navrati uspesnost operacie
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_aed5b838f78cfecb96eb290e54147f297}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_aed5b838f78cfecb96eb290e54147f297}} 
+\index{TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}!removeButton\_Click@{removeButton\_Click}}
+\index{removeButton\_Click@{removeButton\_Click}!TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}}
+\doxysubsubsection{\texorpdfstring{removeButton\_Click()}{removeButton\_Click()}}
+{\footnotesize\ttfamily void Testovaci\+Priklad1.\+Hlavna\+Aplikacia.\+remove\+Button\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Obslužná metóda tláčidla vymazať. Vybraný objekt sa po stlačení vymaže. Pred vymazaním sa zobrazí dopytovacie sa okno pre overenie rozhodnutia. Po vymazaní sa nová databáza uloží a opäť načíta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a6dbb211f58288d5995af5d3cf08ddc26}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a6dbb211f58288d5995af5d3cf08ddc26}} 
+\index{TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}!ulozDatabazu@{ulozDatabazu}}
+\index{ulozDatabazu@{ulozDatabazu}!TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}}
+\doxysubsubsection{\texorpdfstring{ulozDatabazu()}{ulozDatabazu()}}
+{\footnotesize\ttfamily bool Testovaci\+Priklad1.\+Hlavna\+Aplikacia.\+uloz\+Databazu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Metóda na uloženie databáze do XML súboru 
+
+\begin{DoxyReturn}{Returns}
+Úspešnosť zápisu
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_aab769e17f51342b1d176bf39ba38d6f5}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_aab769e17f51342b1d176bf39ba38d6f5}} 
+\index{TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}!zistiNajvysieID@{zistiNajvysieID}}
+\index{zistiNajvysieID@{zistiNajvysieID}!TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}}
+\doxysubsubsection{\texorpdfstring{zistiNajvysieID()}{zistiNajvysieID()}}
+{\footnotesize\ttfamily int Testovaci\+Priklad1.\+Hlavna\+Aplikacia.\+zisti\+Najvysie\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Metóda pre zistenie súčasného najväčšieho ID. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Testovaci\+Priklad1/Hlavna\+Aplikacia.\+cs\item 
+Testovaci\+Priklad1/Hlavna\+Aplikacia.\+Designer.\+cs\end{DoxyCompactItemize}

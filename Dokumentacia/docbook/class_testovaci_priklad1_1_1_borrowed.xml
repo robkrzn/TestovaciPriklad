@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_testovaci_priklad1_1_1_borrowed" xml:lang="en-US">
+<title>TestovaciPriklad1.Borrowed Class Reference</title>
+<indexterm><primary>TestovaciPriklad1.Borrowed</primary></indexterm>
+<para>
+
+<para>Trieda pre objekt s informáciami o zapožičaní knihy. </para>
+ 
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_testovaci_priklad1_1_1_borrowed_1a8a462df0a3e11ed942109f65f9cbb9a9">Borrowed</link> (string <link linkend="_class_testovaci_priklad1_1_1_borrowed_1a72e26f11b1ff74f1f033da77f07f9d46">FirstName</link>, string <link linkend="_class_testovaci_priklad1_1_1_borrowed_1aa572375cd2588096145410d389bc079a">LastName</link>, String <link linkend="_class_testovaci_priklad1_1_1_borrowed_1af8b2b7ec04a9f7b43352053dfd069f30">From</link>)</para>
+
+<para>Objekt pre uloženie informácii o zapožičání knihy </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_borrowed_1a72e26f11b1ff74f1f033da77f07f9d46"/>string <emphasis role="strong">FirstName</emphasis></para>
+
+<para>Meno človeka čo si zapožical knihu </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_borrowed_1aa572375cd2588096145410d389bc079a"/>string <emphasis role="strong">LastName</emphasis></para>
+
+<para>Priezvisko človeka čo si zapožičal knihu </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_borrowed_1af8b2b7ec04a9f7b43352053dfd069f30"/>String <emphasis role="strong">From</emphasis></para>
+
+<para>Datum zapožičania knihy </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Trieda pre objekt s informáciami o zapožičaní knihy. </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_testovaci_priklad1_1_1_borrowed_1a8a462df0a3e11ed942109f65f9cbb9a9"/><section>
+    <title>Borrowed()</title>
+<indexterm><primary>Borrowed</primary><secondary>TestovaciPriklad1.Borrowed</secondary></indexterm>
+<indexterm><primary>TestovaciPriklad1.Borrowed</primary><secondary>Borrowed</secondary></indexterm>
+<para><computeroutput>TestovaciPriklad1.Borrowed.Borrowed (string FirstName, string LastName, String From)</computeroutput></para><para>
+
+<para>Objekt pre uloženie informácii o zapožičání knihy </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>FirstName</entry><entry>
+<para>Meno človeka čo si knihu požičal</para>
+</entry>
+                            </row>
+                            <row>
+<entry>LastName</entry><entry>
+<para>Priezvisko človeka čo si knihu požičal</para>
+</entry>
+                            </row>
+                            <row>
+<entry>From</entry><entry>
+<para>Dátum kedy si knihu požičal</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+TestovaciPriklad1/Borrowed.cs</section>
+</section>

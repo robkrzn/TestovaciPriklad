@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_testovaci_priklad1_1_1_program" xml:lang="en-US">
+<title>TestovaciPriklad1.Program Class Reference</title>
+<indexterm><primary>TestovaciPriklad1.Program</primary></indexterm>
+<simplesect>
+    <title>Static Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_program_1ad283ad1937a8132cde83d9b49daad5c3"/>static void <emphasis role="strong">Main</emphasis> ()</para>
+
+<para>The main entry point for the application. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following file:</para>
+TestovaciPriklad1/Program.cs</section>

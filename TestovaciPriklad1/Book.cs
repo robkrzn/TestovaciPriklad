@@ -7,7 +7,9 @@ using System.Xml.Serialization;
 
 namespace TestovaciPriklad1
 {
-    
+    /// <summary>
+    /// Trieda pre objekt s informáciami o knihe.
+    /// </summary>
     class Book
     {
         /// <summary>
@@ -26,6 +28,13 @@ namespace TestovaciPriklad1
         /// Informacie o zapozicani hnihy
         /// </summary>
         public Borrowed borrowed { get; set; }
+        /// <summary>
+        /// Objekt pre uloženie inforácii o príslušnej knihe.
+        /// </summary>
+        /// <param name="id">ID knihy</param>
+        /// <param name="Name">Názov knihy</param>
+        /// <param name="Author">Autor knihy</param>
+        /// <param name="borrowed">Informácie o človekovi čo si knihu zapožičal</param>
         public Book(int id, string Name, string Author, Borrowed borrowed)
         {
             this.id = id;

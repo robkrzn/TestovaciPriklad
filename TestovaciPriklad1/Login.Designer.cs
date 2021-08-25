@@ -1,6 +1,9 @@
 ﻿
 namespace TestovaciPriklad1
 {
+    /// <summary>
+    /// Okno ktore sluzi pre prihlasaenie
+    /// </summary>
     partial class Login
     {
         /// <summary>
@@ -74,7 +77,7 @@ namespace TestovaciPriklad1
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(97, 82);
+            this.passwordTextBox.Location = new System.Drawing.Point(97, 87);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(150, 23);
             this.passwordTextBox.TabIndex = 4;
@@ -90,6 +93,7 @@ namespace TestovaciPriklad1
             this.Controls.Add(this.label1);
             this.Controls.Add(this.loginButton);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -102,7 +106,7 @@ namespace TestovaciPriklad1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox loginTextBox;
-        private System.Windows.Forms.TextBox paswordTextBox;
+        //private System.Windows.Forms.TextBox paswordTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
     }
 }

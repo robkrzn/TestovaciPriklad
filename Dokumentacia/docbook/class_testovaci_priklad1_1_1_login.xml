@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_testovaci_priklad1_1_1_login" xml:lang="en-US">
+<title>TestovaciPriklad1.Login Class Reference</title>
+<indexterm><primary>TestovaciPriklad1.Login</primary></indexterm>
+<para>
+
+<para>Trieda s objektom okna slúžiace pre prihlásenie </para>
+ 
+</para>
+<para>Inheritance diagram for TestovaciPriklad1.Login:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_testovaci_priklad1_1_1_login.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_login_1aa59f583d7c591c9e259f3ce5ccb85c7e"/><emphasis role="strong">Login</emphasis> ()</para>
+
+<para>Okno pre prihlasovanie do aplikacie. Po prihlaseni sa zobrazí hlavné okno. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_testovaci_priklad1_1_1_login_1af00e4c61ff96c1dbdd8f5b74a51ae346">Dispose</link> (bool disposing)</para>
+
+<para>Clean up any resources being used. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_testovaci_priklad1_1_1_login_1af393724666a847ec7759ac319f42a186">loginButton_Click</link> (object sender, EventArgs e)</para>
+
+<para>Tláčidlo pre prihlásenie. Overí správnosť údajov. Pri správne zadaných údajoch otvorí okno s aplikáciou. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_login_1af7af2c0bfa0a234061de62ee78b00f32"/>void <emphasis role="strong">InitializeComponent</emphasis> ()</para>
+
+<para>Required method for Designer support - do not modify the contents of this method with the code editor. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_login_1a52bb5add02e6fce0e9896ddfe4da545b"/>string <emphasis role="strong">meno</emphasis></para>
+
+<para>Meno uzivatela </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_login_1ab8b4280a75153320205329800c4773d2"/>string <emphasis role="strong">heslo</emphasis></para>
+
+<para>Heslo uzivatela </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_login_1aa6524e7244a80f776dea9abdfcc14cbe"/>System.ComponentModel.IContainer <emphasis role="strong">components</emphasis> = null</para>
+
+<para>Required designer variable. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_login_1af19b2637e13fa9a89a26952d56fa2d00"/>System.Windows.Forms.Button <emphasis role="strong">loginButton</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_login_1abc179a143e95249311cb6d22829bf676"/>System.Windows.Forms.Label <emphasis role="strong">label1</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_login_1a784a409bc18a215f915c7a3508abbf6d"/>System.Windows.Forms.Label <emphasis role="strong">label2</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_login_1ae13630f2af19cc296be858048f33d2bd"/>System.Windows.Forms.TextBox <emphasis role="strong">loginTextBox</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_login_1a01d33c6d6f33d9a37b9241bfc32884ab"/>System.Windows.Forms.TextBox <emphasis role="strong">passwordTextBox</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Trieda s objektom okna slúžiace pre prihlásenie </para>
+
+
+
+<para>Okno ktore sluzi pre prihlasaenie </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_testovaci_priklad1_1_1_login_1af00e4c61ff96c1dbdd8f5b74a51ae346"/><section>
+    <title>Dispose()</title>
+<indexterm><primary>Dispose</primary><secondary>TestovaciPriklad1.Login</secondary></indexterm>
+<indexterm><primary>TestovaciPriklad1.Login</primary><secondary>Dispose</secondary></indexterm>
+<para><computeroutput>override void TestovaciPriklad1.Login.Dispose (bool disposing)<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Clean up any resources being used. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>disposing</entry><entry>
+<para>true if managed resources should be disposed; otherwise, false.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_testovaci_priklad1_1_1_login_1af393724666a847ec7759ac319f42a186"/><section>
+    <title>loginButton_Click()</title>
+<indexterm><primary>loginButton_Click</primary><secondary>TestovaciPriklad1.Login</secondary></indexterm>
+<indexterm><primary>TestovaciPriklad1.Login</primary><secondary>loginButton_Click</secondary></indexterm>
+<para><computeroutput>void TestovaciPriklad1.Login.loginButton_Click (object sender, EventArgs e)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Tláčidlo pre prihlásenie. Overí správnosť údajov. Pri správne zadaných údajoch otvorí okno s aplikáciou. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>sender</entry><entry></entry>
+                            </row>
+                            <row>
+<entry>e</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+TestovaciPriklad1/Login.csTestovaciPriklad1/Login.Designer.cs</section>
+</section>

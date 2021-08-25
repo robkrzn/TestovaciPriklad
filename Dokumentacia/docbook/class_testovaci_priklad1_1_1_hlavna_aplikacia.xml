@@ -1,0 +1,434 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia" xml:lang="en-US">
+<title>TestovaciPriklad1.HlavnaAplikacia Class Reference</title>
+<indexterm><primary>TestovaciPriklad1.HlavnaAplikacia</primary></indexterm>
+<para>
+
+<para>Okno s aplikáciou na obsluhu databáze </para>
+ 
+</para>
+<para>Inheritance diagram for TestovaciPriklad1.HlavnaAplikacia:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_testovaci_priklad1_1_1_hlavna_aplikacia.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a3a4fe62dcfeacd72a192b30f03084b15"/><emphasis role="strong">HlavnaAplikacia</emphasis> ()</para>
+
+<para>Konštruktor okna s hlavnou aplikacou </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a3c1af6feed3e39f4275b2bd07884df62">Dispose</link> (bool disposing)</para>
+
+<para>Clean up any resources being used. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a56e5b3f68d70feadaa7cf5e1bb74dec4">nacitajDatabazu</link> ()</para>
+
+<para>Metóda pre načítanie databáze z XML súboru. Po načítani sa automaticky prevedú aj do tabuľky. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1ae76d962227a50b8289949982a53c24fc"/>void <emphasis role="strong">vypisDatabaze</emphasis> ()</para>
+
+<para>Pomocná metóda pre vypis databáze do tabulky. Podľa zaklinutých ChceckBoxov sa zobrazia príslušné dáta v tabulke. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a6dbb211f58288d5995af5d3cf08ddc26">ulozDatabazu</link> ()</para>
+
+<para>Metóda na uloženie databáze do XML súboru </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a7f725fce2e19ea8a4ccf01a3ad049030"/>void <emphasis role="strong">HlavnaAplikacia_Load</emphasis> (object sender, EventArgs e)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a6450a17005734d21cf290b8f74078eb1">addButton_Click</link> (object sender, EventArgs e)</para>
+
+<para>Oblužná metóda stlačenia tlačidla pridať. Po stlačení sa uložia vyplnené záznamy do databáze. Databáza sa následne uloží a opäť načíta. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1aed5b838f78cfecb96eb290e54147f297">removeButton_Click</link> (object sender, EventArgs e)</para>
+
+<para>Obslužná metóda tláčidla vymazať. Vybraný objekt sa po stlačení vymaže. Pred vymazaním sa zobrazí dopytovacie sa okno pre overenie rozhodnutia. Po vymazaní sa nová databáza uloží a opäť načíta. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a4f633a5ad5a6e47fe521320be1691786">editButton_Click</link> (object sender, EventArgs e)</para>
+
+<para>Obslužná metóda tláčidla upraviť. Upravené dáta sa uložia do databáze. Po uložení sa zobrazí informatívne okno o dokončení operácie. Databáza sa následne uloží a opätovne načíta. </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1aab769e17f51342b1d176bf39ba38d6f5">zistiNajvysieID</link> ()</para>
+
+<para>Metóda pre zistenie súčasného najväčšieho ID. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a6ea868fe7a40822d711b143b76a0054b">freeBookCheckBox_CheckedChanged</link> (object sender, EventArgs e)</para>
+
+<para>CheckBox pre zobrazenie záznamov s knihami ktoré sú k dispozícii v knižnici. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a7e1479daea282712a47310092333c3fa">borrowedBookCheckBox_CheckedChanged</link> (object sender, EventArgs e)</para>
+
+<para>ChceckBox pre zobrazenie záznamov s knihami ktoré sú požičáné. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1aecdcd0bf4ec127543d700b188efbc094">dataGridView_CellContentClick</link> (object sender, DataGridViewCellEventArgs e)</para>
+
+<para>Po zakliknutí objektu v tabulke sa zobrazia dáta do TextBoxov pod tabulkou </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1ab17b1dd85b5ffc6756370e2e4c3a6e50"/>void <emphasis role="strong">InitializeComponent</emphasis> ()</para>
+
+<para>Required method for Designer support - do not modify the contents of this method with the code editor. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1aa2775ec3533b5d6bc859c035b562c827"/>List&lt; <link linkend="_class_testovaci_priklad1_1_1_book">Book</link> &gt; <emphasis role="strong">library</emphasis> = new List&lt;<link linkend="_class_testovaci_priklad1_1_1_book">Book</link>&gt;()</para>
+
+<para>List ktorý tvorí databázu kníh </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a622929d2b08eaf858a9e470248026179"/>string <emphasis role="strong">file</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a2d8caf3e21aedd8a09b2b1da1554e369"/>System.ComponentModel.IContainer <emphasis role="strong">components</emphasis> = null</para>
+
+<para>Required designer variable. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1ab6a08ab9ba602fe945630adee1d6116d"/>System.Windows.Forms.Label <emphasis role="strong">label1</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a4552b3691f4530f206b0e489215f6109"/>System.Windows.Forms.DataGridView <emphasis role="strong">dataGridView</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a2e2bbf2e5def9acd09e6da32997f63fa"/>System.Windows.Forms.DataGridViewTextBoxColumn <emphasis role="strong">id</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a5b3267ffc417959982ed2332d3fbeee7"/>System.Windows.Forms.DataGridViewTextBoxColumn <emphasis role="strong">name</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a64e177d827866d9e2f1e6610230c74ed"/>System.Windows.Forms.DataGridViewTextBoxColumn <emphasis role="strong">author</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a0287c682eab4769c4c29bc66434a9c97"/>System.Windows.Forms.DataGridViewTextBoxColumn <emphasis role="strong">firstName</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a8670f1d3c1a2af4bffc71fa3c9840e69"/>System.Windows.Forms.DataGridViewTextBoxColumn <emphasis role="strong">lastName</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1aa2fd71429ed050d6848e0af1607011cb"/>System.Windows.Forms.DataGridViewTextBoxColumn <emphasis role="strong">from</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1ac54f1b9441ffb63b02f3b4687582f905"/>System.Windows.Forms.BindingSource <emphasis role="strong">bindingSource1</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a062ca6615c7a228c148bce6b572c0b80"/>System.Windows.Forms.Button <emphasis role="strong">addButton</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1ac996a4271f1de19fb755b0f53b7989ef"/>System.Windows.Forms.Button <emphasis role="strong">removeButton</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a27b977452abd7b58f9f656b871d8daf0"/>System.Windows.Forms.Button <emphasis role="strong">editButton</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a53f71a0491fd9099535ef670507cffa8"/>System.Windows.Forms.CheckBox <emphasis role="strong">freeBookCheckBox</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1ad4dc5af4cd12caf7b4b5454c36bba37a"/>System.Windows.Forms.CheckBox <emphasis role="strong">borrowedBookCheckBox</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a8e9bc8528aed8ef6da45a7dbd5a849bb"/>System.Windows.Forms.GroupBox <emphasis role="strong">groupBox1</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1ac29b6007dcdac0ca42a913a36855fdd1"/>System.Windows.Forms.DateTimePicker <emphasis role="strong">fromDateTimePicker</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1ad9b08fb7ec2365f4d18c8112167659ad"/>System.Windows.Forms.TextBox <emphasis role="strong">lastNameTextBox</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a42c6bf0abdf6f29b089df43702acb4bb"/>System.Windows.Forms.TextBox <emphasis role="strong">nameTextBox</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a692cd4dd2c0e3d46e8bed9819e3b3d59"/>System.Windows.Forms.TextBox <emphasis role="strong">authorTextBox</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1aaf426980e1a7c767fb81981d2ad7703e"/>System.Windows.Forms.TextBox <emphasis role="strong">bookTextBox</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a969cf109496b86772b8f9594bb36d4c0"/>System.Windows.Forms.TextBox <emphasis role="strong">idTextBox</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a44f3fb670e8ee2ef00761dfb79646517"/>System.Windows.Forms.Label <emphasis role="strong">label7</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1ab64150b0563758af8e5e9c49763a7aef"/>System.Windows.Forms.Label <emphasis role="strong">label6</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1adb0d7450f6d1f8298451efcd9b9cdd19"/>System.Windows.Forms.Label <emphasis role="strong">label5</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1ae48160fb029cb4ff297008a8ebe85033"/>System.Windows.Forms.Label <emphasis role="strong">label4</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a8135820ac6edc7529aaec7b478ae2417"/>System.Windows.Forms.Label <emphasis role="strong">label3</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1abb53bbd41428726bbb1dd1f378ffc116"/>System.Windows.Forms.Label <emphasis role="strong">label2</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Okno s aplikáciou na obsluhu databáze </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a6450a17005734d21cf290b8f74078eb1"/><section>
+    <title>addButton_Click()</title>
+<indexterm><primary>addButton_Click</primary><secondary>TestovaciPriklad1.HlavnaAplikacia</secondary></indexterm>
+<indexterm><primary>TestovaciPriklad1.HlavnaAplikacia</primary><secondary>addButton_Click</secondary></indexterm>
+<para><computeroutput>void TestovaciPriklad1.HlavnaAplikacia.addButton_Click (object sender, EventArgs e)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Oblužná metóda stlačenia tlačidla pridať. Po stlačení sa uložia vyplnené záznamy do databáze. Databáza sa následne uloží a opäť načíta. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>sender</entry><entry></entry>
+                            </row>
+                            <row>
+<entry>e</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a7e1479daea282712a47310092333c3fa"/><section>
+    <title>borrowedBookCheckBox_CheckedChanged()</title>
+<indexterm><primary>borrowedBookCheckBox_CheckedChanged</primary><secondary>TestovaciPriklad1.HlavnaAplikacia</secondary></indexterm>
+<indexterm><primary>TestovaciPriklad1.HlavnaAplikacia</primary><secondary>borrowedBookCheckBox_CheckedChanged</secondary></indexterm>
+<para><computeroutput>void TestovaciPriklad1.HlavnaAplikacia.borrowedBookCheckBox_CheckedChanged (object sender, EventArgs e)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>ChceckBox pre zobrazenie záznamov s knihami ktoré sú požičáné. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>sender</entry><entry></entry>
+                            </row>
+                            <row>
+<entry>e</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1aecdcd0bf4ec127543d700b188efbc094"/><section>
+    <title>dataGridView_CellContentClick()</title>
+<indexterm><primary>dataGridView_CellContentClick</primary><secondary>TestovaciPriklad1.HlavnaAplikacia</secondary></indexterm>
+<indexterm><primary>TestovaciPriklad1.HlavnaAplikacia</primary><secondary>dataGridView_CellContentClick</secondary></indexterm>
+<para><computeroutput>void TestovaciPriklad1.HlavnaAplikacia.dataGridView_CellContentClick (object sender, DataGridViewCellEventArgs e)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Po zakliknutí objektu v tabulke sa zobrazia dáta do TextBoxov pod tabulkou </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>sender</entry><entry></entry>
+                            </row>
+                            <row>
+<entry>e</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a3c1af6feed3e39f4275b2bd07884df62"/><section>
+    <title>Dispose()</title>
+<indexterm><primary>Dispose</primary><secondary>TestovaciPriklad1.HlavnaAplikacia</secondary></indexterm>
+<indexterm><primary>TestovaciPriklad1.HlavnaAplikacia</primary><secondary>Dispose</secondary></indexterm>
+<para><computeroutput>override void TestovaciPriklad1.HlavnaAplikacia.Dispose (bool disposing)<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Clean up any resources being used. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>disposing</entry><entry>
+<para>true if managed resources should be disposed; otherwise, false.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a4f633a5ad5a6e47fe521320be1691786"/><section>
+    <title>editButton_Click()</title>
+<indexterm><primary>editButton_Click</primary><secondary>TestovaciPriklad1.HlavnaAplikacia</secondary></indexterm>
+<indexterm><primary>TestovaciPriklad1.HlavnaAplikacia</primary><secondary>editButton_Click</secondary></indexterm>
+<para><computeroutput>void TestovaciPriklad1.HlavnaAplikacia.editButton_Click (object sender, EventArgs e)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Obslužná metóda tláčidla upraviť. Upravené dáta sa uložia do databáze. Po uložení sa zobrazí informatívne okno o dokončení operácie. Databáza sa následne uloží a opätovne načíta. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>sender</entry><entry></entry>
+                            </row>
+                            <row>
+<entry>e</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a6ea868fe7a40822d711b143b76a0054b"/><section>
+    <title>freeBookCheckBox_CheckedChanged()</title>
+<indexterm><primary>freeBookCheckBox_CheckedChanged</primary><secondary>TestovaciPriklad1.HlavnaAplikacia</secondary></indexterm>
+<indexterm><primary>TestovaciPriklad1.HlavnaAplikacia</primary><secondary>freeBookCheckBox_CheckedChanged</secondary></indexterm>
+<para><computeroutput>void TestovaciPriklad1.HlavnaAplikacia.freeBookCheckBox_CheckedChanged (object sender, EventArgs e)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>CheckBox pre zobrazenie záznamov s knihami ktoré sú k dispozícii v knižnici. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>sender</entry><entry></entry>
+                            </row>
+                            <row>
+<entry>e</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a56e5b3f68d70feadaa7cf5e1bb74dec4"/><section>
+    <title>nacitajDatabazu()</title>
+<indexterm><primary>nacitajDatabazu</primary><secondary>TestovaciPriklad1.HlavnaAplikacia</secondary></indexterm>
+<indexterm><primary>TestovaciPriklad1.HlavnaAplikacia</primary><secondary>nacitajDatabazu</secondary></indexterm>
+<para><computeroutput>bool TestovaciPriklad1.HlavnaAplikacia.nacitajDatabazu ( )<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Metóda pre načítanie databáze z XML súboru. Po načítani sa automaticky prevedú aj do tabuľky. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Navrati uspesnost operacie</para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1aed5b838f78cfecb96eb290e54147f297"/><section>
+    <title>removeButton_Click()</title>
+<indexterm><primary>removeButton_Click</primary><secondary>TestovaciPriklad1.HlavnaAplikacia</secondary></indexterm>
+<indexterm><primary>TestovaciPriklad1.HlavnaAplikacia</primary><secondary>removeButton_Click</secondary></indexterm>
+<para><computeroutput>void TestovaciPriklad1.HlavnaAplikacia.removeButton_Click (object sender, EventArgs e)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Obslužná metóda tláčidla vymazať. Vybraný objekt sa po stlačení vymaže. Pred vymazaním sa zobrazí dopytovacie sa okno pre overenie rozhodnutia. Po vymazaní sa nová databáza uloží a opäť načíta. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>sender</entry><entry></entry>
+                            </row>
+                            <row>
+<entry>e</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a6dbb211f58288d5995af5d3cf08ddc26"/><section>
+    <title>ulozDatabazu()</title>
+<indexterm><primary>ulozDatabazu</primary><secondary>TestovaciPriklad1.HlavnaAplikacia</secondary></indexterm>
+<indexterm><primary>TestovaciPriklad1.HlavnaAplikacia</primary><secondary>ulozDatabazu</secondary></indexterm>
+<para><computeroutput>bool TestovaciPriklad1.HlavnaAplikacia.ulozDatabazu ( )<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Metóda na uloženie databáze do XML súboru </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Úspešnosť zápisu</para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1aab769e17f51342b1d176bf39ba38d6f5"/><section>
+    <title>zistiNajvysieID()</title>
+<indexterm><primary>zistiNajvysieID</primary><secondary>TestovaciPriklad1.HlavnaAplikacia</secondary></indexterm>
+<indexterm><primary>TestovaciPriklad1.HlavnaAplikacia</primary><secondary>zistiNajvysieID</secondary></indexterm>
+<para><computeroutput>int TestovaciPriklad1.HlavnaAplikacia.zistiNajvysieID ( )<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Metóda pre zistenie súčasného najväčšieho ID. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+TestovaciPriklad1/HlavnaAplikacia.csTestovaciPriklad1/HlavnaAplikacia.Designer.cs</section>
+</section>

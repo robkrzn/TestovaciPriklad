@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_testovaci_priklad1_1_1_book" xml:lang="en-US">
+<title>TestovaciPriklad1.Book Class Reference</title>
+<indexterm><primary>TestovaciPriklad1.Book</primary></indexterm>
+<para>
+
+<para>Trieda s informáciami o knihe. </para>
+ 
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_testovaci_priklad1_1_1_book_1aab268b5b6f6d6e711a8d54c57db58223">Book</link> (int <link linkend="_class_testovaci_priklad1_1_1_book_1a6c3ae088be7a075440820661fcb863c7">id</link>, string <link linkend="_class_testovaci_priklad1_1_1_book_1a5c926cce4abdbe2d5aef562a68a0eb77">Name</link>, string <link linkend="_class_testovaci_priklad1_1_1_book_1ae064529d085f27f1abe519f19b739dba">Author</link>, <link linkend="_class_testovaci_priklad1_1_1_borrowed">Borrowed</link> <link linkend="_class_testovaci_priklad1_1_1_book_1ad43ecb165197031e2dadef3b130899f3">borrowed</link>)</para>
+
+<para>Objekt pre uloženie inforácii o príslušnej knihe. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_book_1a6c3ae088be7a075440820661fcb863c7"/>int <emphasis role="strong">id</emphasis><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>Id knihy </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_book_1a5c926cce4abdbe2d5aef562a68a0eb77"/>string <emphasis role="strong">Name</emphasis><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>Nazov knihy </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_book_1ae064529d085f27f1abe519f19b739dba"/>string <emphasis role="strong">Author</emphasis><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>Autor knihy </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_book_1ad43ecb165197031e2dadef3b130899f3"/><link linkend="_class_testovaci_priklad1_1_1_borrowed">Borrowed</link> <emphasis role="strong">borrowed</emphasis><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>Informacie o zapozicani hnihy </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Trieda s informáciami o knihe. </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_testovaci_priklad1_1_1_book_1aab268b5b6f6d6e711a8d54c57db58223"/><section>
+    <title>Book()</title>
+<indexterm><primary>Book</primary><secondary>TestovaciPriklad1.Book</secondary></indexterm>
+<indexterm><primary>TestovaciPriklad1.Book</primary><secondary>Book</secondary></indexterm>
+<para><computeroutput>TestovaciPriklad1.Book.Book (int id, string Name, string Author, <link linkend="_class_testovaci_priklad1_1_1_borrowed">Borrowed</link> borrowed)</computeroutput></para><para>
+
+<para>Objekt pre uloženie inforácii o príslušnej knihe. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>id</entry><entry>
+<para>ID knihy</para>
+</entry>
+                            </row>
+                            <row>
+<entry>Name</entry><entry>
+<para>Názov knihy</para>
+</entry>
+                            </row>
+                            <row>
+<entry>Author</entry><entry>
+<para>Autor knihy</para>
+</entry>
+                            </row>
+                            <row>
+<entry>borrowed</entry><entry>
+<para>Informácie o človekovi čo si knihu zapožičal</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+TestovaciPriklad1/Book.cs</section>
+</section>
