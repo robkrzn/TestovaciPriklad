@@ -156,6 +156,14 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
+        <member name="M:TestovaciPriklad1.HlavnaAplikacia.returnButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Tláčidlo pre rýchlo vrátenie knihy.
+            Po stlačení tlačidla sa kniha označí ako vrátená.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="F:TestovaciPriklad1.HlavnaAplikacia.components">
             <summary>
              Required designer variable.

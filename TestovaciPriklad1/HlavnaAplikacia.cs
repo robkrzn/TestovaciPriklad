@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
-//using System.Xml.Linq;
-//using System.Xml.Serialization;
 
 namespace TestovaciPriklad1
 {
@@ -58,7 +52,6 @@ namespace TestovaciPriklad1
                         new Borrowed(dataset.Tables[1].Rows[i][0].ToString(), dataset.Tables[1].Rows[i][1].ToString(), dataset.Tables[1].Rows[i][2].ToString()));
                     library.Add(kniha);
                 }
-                dataGridView.Rows.Clear();
                 vypisDatabaze();
                 return true;
             }
@@ -74,17 +67,17 @@ namespace TestovaciPriklad1
         private void vypisDatabaze() {
             for (int i = 0; i < library.Count; i++)
             {
-                if (freeBookCheckBox.Checked == true)
+                if (freeBookCheckBox.Checked == true)//vypis bez požičanych
                 {
                     if (library[i].borrowed.FirstName == "")
                         dataGridView.Rows.Add(library[i].id, library[i].Name, library[i].Author, library[i].borrowed.FirstName, library[i].borrowed.LastName, library[i].borrowed.From);
                 }
-                else if (borrowedBookCheckBox.Checked == true)
+                else if (borrowedBookCheckBox.Checked == true)//vypis s požičanimi
                 {
                     if (library[i].borrowed.FirstName != "")
                         dataGridView.Rows.Add(library[i].id, library[i].Name, library[i].Author, library[i].borrowed.FirstName, library[i].borrowed.LastName, library[i].borrowed.From);
                 }
-                else
+                else//vypis všetkych
                 {
                     dataGridView.Rows.Add(library[i].id, library[i].Name, library[i].Author, library[i].borrowed.FirstName, library[i].borrowed.LastName, library[i].borrowed.From);
                 }
@@ -98,7 +91,6 @@ namespace TestovaciPriklad1
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
             settings.Encoding = Encoding.GetEncoding("windows-1250");
-            //using (XmlWriter xw = XmlWriter.Create(@"C:\Users\rober\source\repos\TestovaciPriklad1\TestovaciPriklad1\Library.xml", settings))
             try
             {
                 using (XmlWriter xw = XmlWriter.Create(this.file, settings))
@@ -149,13 +141,24 @@ namespace TestovaciPriklad1
             {
                 if (fromDateTimePicker.Value < DateTime.Now)
                 {
-                    if (nameTextBox.Text == "")
-                        library.Add(new Book(zistiNajvysieID() + 1, bookTextBox.Text, authorTextBox.Text, new Borrowed("", "", "")));
-                    else
-                        library.Add(new Book(zistiNajvysieID() + 1, bookTextBox.Text, authorTextBox.Text, new Borrowed(nameTextBox.Text, lastNameTextBox.Text, fromDateTimePicker.Value.ToString("d.M.yyyy"))));
-                    ulozDatabazu();
-                    nacitajDatabazu();
-                }else MessageBox.Show("Datum je z búcnosti");
+                    //overenie či sa kniha už nachadza v zozname
+                    bool zhoda = false;
+                    for (int i = 0; i < library.Count; i++) {
+                        if (library[i].Name.ToString().Equals(bookTextBox.Text)) zhoda = true;
+                    }
+                    if (!zhoda)
+                    {
+                        if (nameTextBox.Text == "")
+                            library.Add(new Book(zistiNajvysieID() + 1, bookTextBox.Text, authorTextBox.Text, new Borrowed("", "", "")));
+                        else
+                            library.Add(new Book(zistiNajvysieID() + 1, bookTextBox.Text, authorTextBox.Text, new Borrowed(nameTextBox.Text, lastNameTextBox.Text, fromDateTimePicker.Value.ToString("d.M.yyyy"))));
+                        ulozDatabazu();
+                        nacitajDatabazu();
+                    }
+                    else MessageBox.Show("Kniha sa už v zozname nachádza.");
+                    
+                }
+                else MessageBox.Show("Datum je z búcnosti");
             }
             else MessageBox.Show("Nieje zadany autor alebo dielo");
         }
@@ -271,7 +274,32 @@ namespace TestovaciPriklad1
                 fromDateTimePicker.Value = DateTime.ParseExact(dataGridView.SelectedRows[0].Cells[5].Value.ToString(), "d.M.yyyy", null);
             else fromDateTimePicker.Value = DateTime.Today;
         }
-
-        
+        /// <summary>
+        /// Tláčidlo pre rýchlo vrátenie knihy.
+        /// Po stlačení tlačidla sa kniha označí ako vrátená.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void returnButton_Click(object sender, EventArgs e)
+        {
+            if (nameTextBox.Text != "" || lastNameTextBox.Text != "")
+            {
+                DialogResult dialogResult = MessageBox.Show("Prajete si knihu " + bookTextBox.Text + " od " + authorTextBox.Text
+                + " označiť ako vrátenú ?", "Vrátiť knihu", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes) {
+                    int pom = 0;
+                    for (int i = 0; i < library.Count; i++)
+                    {
+                        if (library[i].id == int.Parse(idTextBox.Text)) pom = i;
+                    }
+                    library[pom] = (new Book(int.Parse(idTextBox.Text), bookTextBox.Text, authorTextBox.Text, new Borrowed("", "", "")));
+                    ulozDatabazu();
+                    nacitajDatabazu();
+                }
+            }
+            else {
+                MessageBox.Show("Zvolenú knihu nieje možné vrátiť.");
+            }
+        }
     }
 }

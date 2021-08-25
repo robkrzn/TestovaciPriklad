@@ -29,7 +29,6 @@ namespace TestovaciPriklad1
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,7 +37,6 @@ namespace TestovaciPriklad1
             this.firstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.from = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.addButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
@@ -57,8 +55,8 @@ namespace TestovaciPriklad1
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.returnButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +72,7 @@ namespace TestovaciPriklad1
             // 
             // dataGridView
             // 
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -83,11 +82,12 @@ namespace TestovaciPriklad1
             this.lastName,
             this.from});
             this.dataGridView.Location = new System.Drawing.Point(37, 67);
+            this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowTemplate.Height = 25;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(647, 241);
+            this.dataGridView.Size = new System.Drawing.Size(728, 241);
             this.dataGridView.TabIndex = 2;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
@@ -181,6 +181,7 @@ namespace TestovaciPriklad1
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.returnButton);
             this.groupBox1.Controls.Add(this.fromDateTimePicker);
             this.groupBox1.Controls.Add(this.lastNameTextBox);
             this.groupBox1.Controls.Add(this.nameTextBox);
@@ -202,7 +203,7 @@ namespace TestovaciPriklad1
             // 
             // fromDateTimePicker
             // 
-            this.fromDateTimePicker.Location = new System.Drawing.Point(495, 58);
+            this.fromDateTimePicker.Location = new System.Drawing.Point(492, 39);
             this.fromDateTimePicker.MaxDate = new System.DateTime(2999, 8, 25, 0, 0, 0, 0);
             this.fromDateTimePicker.MinDate = new System.DateTime(1980, 1, 1, 0, 0, 0, 0);
             this.fromDateTimePicker.Name = "fromDateTimePicker";
@@ -212,28 +213,28 @@ namespace TestovaciPriklad1
             // 
             // lastNameTextBox
             // 
-            this.lastNameTextBox.Location = new System.Drawing.Point(388, 57);
+            this.lastNameTextBox.Location = new System.Drawing.Point(385, 38);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(100, 23);
             this.lastNameTextBox.TabIndex = 10;
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(282, 58);
+            this.nameTextBox.Location = new System.Drawing.Point(279, 39);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(100, 23);
             this.nameTextBox.TabIndex = 9;
             // 
             // authorTextBox
             // 
-            this.authorTextBox.Location = new System.Drawing.Point(174, 58);
+            this.authorTextBox.Location = new System.Drawing.Point(171, 39);
             this.authorTextBox.Name = "authorTextBox";
             this.authorTextBox.Size = new System.Drawing.Size(100, 23);
             this.authorTextBox.TabIndex = 8;
             // 
             // bookTextBox
             // 
-            this.bookTextBox.Location = new System.Drawing.Point(68, 58);
+            this.bookTextBox.Location = new System.Drawing.Point(65, 39);
             this.bookTextBox.MaxLength = 15;
             this.bookTextBox.Name = "bookTextBox";
             this.bookTextBox.Size = new System.Drawing.Size(100, 23);
@@ -241,7 +242,7 @@ namespace TestovaciPriklad1
             // 
             // idTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(23, 58);
+            this.idTextBox.Location = new System.Drawing.Point(20, 39);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.ReadOnly = true;
             this.idTextBox.Size = new System.Drawing.Size(38, 23);
@@ -250,7 +251,7 @@ namespace TestovaciPriklad1
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(494, 39);
+            this.label7.Location = new System.Drawing.Point(491, 20);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 15);
             this.label7.TabIndex = 5;
@@ -259,7 +260,7 @@ namespace TestovaciPriklad1
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(388, 41);
+            this.label6.Location = new System.Drawing.Point(385, 22);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 15);
             this.label6.TabIndex = 4;
@@ -268,7 +269,7 @@ namespace TestovaciPriklad1
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(282, 40);
+            this.label5.Location = new System.Drawing.Point(279, 21);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 15);
             this.label5.TabIndex = 3;
@@ -277,7 +278,7 @@ namespace TestovaciPriklad1
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(174, 39);
+            this.label4.Location = new System.Drawing.Point(171, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 2;
@@ -286,7 +287,7 @@ namespace TestovaciPriklad1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(68, 40);
+            this.label3.Location = new System.Drawing.Point(65, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 15);
             this.label3.TabIndex = 1;
@@ -295,11 +296,21 @@ namespace TestovaciPriklad1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 39);
+            this.label2.Location = new System.Drawing.Point(20, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(18, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "ID";
+            // 
+            // returnButton
+            // 
+            this.returnButton.Location = new System.Drawing.Point(563, 68);
+            this.returnButton.Name = "returnButton";
+            this.returnButton.Size = new System.Drawing.Size(75, 23);
+            this.returnButton.TabIndex = 12;
+            this.returnButton.Text = "Vrátiť";
+            this.returnButton.UseVisualStyleBackColor = true;
+            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
             // 
             // HlavnaAplikacia
             // 
@@ -319,7 +330,6 @@ namespace TestovaciPriklad1
             this.Text = "Správa zapožičaných kníh";
             this.Load += new System.EventHandler(this.HlavnaAplikacia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -331,13 +341,6 @@ namespace TestovaciPriklad1
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn author;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn from;
-        private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button removeButton;
         private System.Windows.Forms.Button editButton;
@@ -356,6 +359,13 @@ namespace TestovaciPriklad1
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn author;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn from;
+        private System.Windows.Forms.Button returnButton;
     }
 }
 

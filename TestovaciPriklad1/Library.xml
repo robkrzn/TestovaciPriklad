@@ -36,15 +36,6 @@
       <From />
     </Borrowed>
   </Book>
-  <Book id="5">
-    <Name>Hamlet</Name>
-    <Author>William Shakespeare</Author>
-    <Borrowed>
-      <FirstName>Jozef</FirstName>
-      <LastName>Štvrtý</LastName>
-      <From>25.10.2009</From>
-    </Borrowed>
-  </Book>
   <Book id="6">
     <Name>Živý biè</Name>
     <Author>Milo Urban</Author>
@@ -55,12 +46,21 @@
     </Borrowed>
   </Book>
   <Book id="7">
+    <Name>Hamlet</Name>
+    <Author>William Shakespeare</Author>
+    <Borrowed>
+      <FirstName>Lukáš</FirstName>
+      <LastName>Štvrtý</LastName>
+      <From>26.8.2021</From>
+    </Borrowed>
+  </Book>
+  <Book id="8">
     <Name>Živý biè</Name>
     <Author>Milo Urban</Author>
     <Borrowed>
-      <FirstName>Robert</FirstName>
-      <LastName>Krizan</LastName>
-      <From>25.8.2021</From>
+      <FirstName />
+      <LastName />
+      <From />
     </Borrowed>
   </Book>
 </Library>
