@@ -28,6 +28,8 @@ namespace TestovaciPriklad1
             this.heslo = System.Configuration.ConfigurationManager.AppSettings["password"];
             //this.meno = "admin";
             //this.heslo = "heslo";
+            //
+
         }
 
         private void loginButton_Click(object sender, EventArgs e)
