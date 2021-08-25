@@ -1,0 +1,212 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
+using System.Xml.Serialization;
+
+namespace TestovaciPriklad1
+{
+    public partial class HlavnaAplikacia : Form
+    {
+        /// <summary>
+        /// Databaza knih
+        /// </summary>
+        private List<Book> library = new List<Book>();
+
+        public HlavnaAplikacia()
+        {
+            InitializeComponent();
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            Encoding.GetEncoding("windows-1250");
+
+            Login login = new Login();
+            login.ShowDialog();
+
+            nacitajDatabazu();
+        }
+        /// <summary>
+        /// Funkcia pre nacitanie databazy
+        /// </summary>
+        /// <returns>Navrati uspesnost operacie</returns>
+        private bool nacitajDatabazu() {
+            dataGridView.Rows.Clear();
+            dataGridView.Refresh();
+            library.Clear();
+            try
+            {
+                DataSet dataset = new DataSet();
+                dataset.ReadXml(@"C:\Users\rober\source\repos\TestovaciPriklad1\TestovaciPriklad1\Library.xml");
+                for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
+                {
+                    Book kniha = new Book(Int16.Parse(dataset.Tables[0].Rows[i][3].ToString()), dataset.Tables[0].Rows[i][0].ToString(), dataset.Tables[0].Rows[i][1].ToString(),
+                        new Borrowed(dataset.Tables[1].Rows[i][0].ToString(), dataset.Tables[1].Rows[i][1].ToString(), dataset.Tables[1].Rows[i][2].ToString()));
+                    library.Add(kniha);
+                }
+                dataGridView.Rows.Clear();
+                vypisDatabaze();
+                return true;
+            }
+            catch (Exception ex) {
+                return false;
+            }
+        }
+        private void vypisDatabaze() {
+            for (int i = 0; i < library.Count; i++)
+            {
+                if (freeBookCheckBox.Checked == true)
+                {
+                    if (library[i].borrowed.FirstName == "")
+                        dataGridView.Rows.Add(library[i].id, library[i].Name, library[i].Author, library[i].borrowed.FirstName, library[i].borrowed.LastName, library[i].borrowed.From);
+                }
+                else if (borrowedBookCheckBox.Checked == true)
+                {
+                    if (library[i].borrowed.FirstName != "")
+                        dataGridView.Rows.Add(library[i].id, library[i].Name, library[i].Author, library[i].borrowed.FirstName, library[i].borrowed.LastName, library[i].borrowed.From);
+                }
+                else
+                {
+                    dataGridView.Rows.Add(library[i].id, library[i].Name, library[i].Author, library[i].borrowed.FirstName, library[i].borrowed.LastName, library[i].borrowed.From);
+                }
+            }
+        }
+        private bool ulozDatabazu(){
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.Encoding = Encoding.GetEncoding("windows-1250");
+            using (XmlWriter xw = XmlWriter.Create(@"C:\Users\rober\source\repos\TestovaciPriklad1\TestovaciPriklad1\Library.xml", settings))
+            {
+                xw.WriteStartDocument();
+                xw.WriteStartElement("Library");
+                foreach (Book b in library)
+                {
+                    xw.WriteStartElement("Book");
+                    xw.WriteAttributeString("id", b.id.ToString());
+                    xw.WriteElementString("Name", b.Name);
+                    xw.WriteElementString("Author", b.Author);
+                    xw.WriteStartElement("Borrowed");
+                    xw.WriteElementString("FirstName", b.borrowed.FirstName);
+                    xw.WriteElementString("LastName", b.borrowed.LastName);
+                    xw.WriteElementString("From", b.borrowed.From);
+                    xw.WriteEndElement();
+                    xw.WriteEndElement();
+                }
+                xw.WriteEndElement();
+                xw.WriteEndDocument();
+                xw.Flush();
+            }
+            return false;
+        }
+
+        private void HlavnaAplikacia_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            if (bookTextBox.Text != "" && authorTextBox.Text != "")
+            {
+                if (fromDateTimePicker.Value < DateTime.Now)
+                {
+                    if (nameTextBox.Text == "")
+                        library.Add(new Book(zistiNajvysieID() + 1, bookTextBox.Text, authorTextBox.Text, new Borrowed("", "", "")));
+                    else
+                        library.Add(new Book(zistiNajvysieID() + 1, bookTextBox.Text, authorTextBox.Text, new Borrowed(nameTextBox.Text, lastNameTextBox.Text, fromDateTimePicker.Value.ToString("d.M.yyyy"))));
+                    ulozDatabazu();
+                    nacitajDatabazu();
+                }else MessageBox.Show("Datum je z búcnosti");
+            }
+            else MessageBox.Show("Neje zadany autor alebo dielo");
+        }
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            if (idTextBox.ToString() != "")
+            {
+                int pom = 0;
+                for(int i =0; i < library.Count; i++) {
+                    if (library[i].id == int.Parse(idTextBox.Text)) pom = i;
+                }
+                DialogResult dialogResult = MessageBox.Show("Naozaj cheš odstrániť záznam: " + library[pom].Name + " od  "+library[pom].Author
+                + " ?", "Odstrániť záznam", MessageBoxButtons.YesNo); 
+                if (dialogResult == DialogResult.Yes)
+                {
+                    library.RemoveAt(pom);
+                    ulozDatabazu();
+                    nacitajDatabazu();
+                    MessageBox.Show("Záznam bol vymazaný"); 
+                } 
+            }
+            else
+            {
+                MessageBox.Show("Nevybral si žiadny záznam");
+            }
+        }
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            if (idTextBox.ToString() != "") {
+                int pom = 0;
+                for (int i = 0; i < library.Count; i++)
+                {
+                    if (library[i].id == int.Parse(idTextBox.Text)) pom = i;
+                }
+                if (nameTextBox.Text == "")
+                    library[pom]=(new Book(int.Parse(idTextBox.Text), bookTextBox.Text, authorTextBox.Text, new Borrowed("", "", "")));
+                else
+                    library[pom]=(new Book(int.Parse(idTextBox.Text), bookTextBox.Text, authorTextBox.Text, new Borrowed(nameTextBox.Text, lastNameTextBox.Text, fromDateTimePicker.Value.ToString("d.M.yyyy"))));
+                ulozDatabazu();
+                nacitajDatabazu();
+                MessageBox.Show("Záznam bol upravený");
+            }
+            else
+                MessageBox.Show("Nevybral si žiadny záznam");
+        }
+        private int zistiNajvysieID() {
+            int id=0;
+            foreach (Book b in library) {
+                if(b.id>id)
+                id = b.id;
+            }
+            return id;
+        }
+
+        private void freeBookCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (freeBookCheckBox.Checked == true) {
+                borrowedBookCheckBox.Checked = false;
+            }
+            nacitajDatabazu();
+
+        }
+
+        private void borrowedBookCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (borrowedBookCheckBox.Checked == true)
+            {
+                freeBookCheckBox.Checked = false;
+            }
+            nacitajDatabazu();
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idTextBox.Text = dataGridView.SelectedRows[0].Cells[0].Value.ToString();
+            bookTextBox.Text = dataGridView.SelectedRows[0].Cells[1].Value.ToString();
+            authorTextBox.Text = dataGridView.SelectedRows[0].Cells[2].Value.ToString();
+            nameTextBox.Text = dataGridView.SelectedRows[0].Cells[3].Value.ToString();
+            lastNameTextBox.Text = dataGridView.SelectedRows[0].Cells[4].Value.ToString();
+            if (dataGridView.SelectedRows[0].Cells[5].Value.ToString() != "")
+                fromDateTimePicker.Value = DateTime.ParseExact(dataGridView.SelectedRows[0].Cells[5].Value.ToString(), "d.M.yyyy", null);
+            else fromDateTimePicker.Value = DateTime.Today;
+        }
+
+        
+    }
+}
