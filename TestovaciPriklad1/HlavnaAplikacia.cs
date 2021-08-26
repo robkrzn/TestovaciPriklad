@@ -258,23 +258,37 @@ namespace TestovaciPriklad1
         }
         /// <summary>
         /// Metóda ktorá vyplní údaje do TextBoxov pod tabulkou po zakliknutí príslušného objektu v tabulke.
+        /// Po kliknutí na prázdny objekt sa Texboxy pod tabulkov vyprázdnia.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            idTextBox.Text = dataGridView.SelectedRows[0].Cells[0].Value.ToString();
-            bookTextBox.Text = dataGridView.SelectedRows[0].Cells[1].Value.ToString();
-            authorTextBox.Text = dataGridView.SelectedRows[0].Cells[2].Value.ToString();
-            nameTextBox.Text = dataGridView.SelectedRows[0].Cells[3].Value.ToString();
-            lastNameTextBox.Text = dataGridView.SelectedRows[0].Cells[4].Value.ToString();
-            if (dataGridView.SelectedRows[0].Cells[5].Value.ToString() != "")
-                fromDateTimePicker.Value = DateTime.ParseExact(dataGridView.SelectedRows[0].Cells[5].Value.ToString(), "d.M.yyyy", null);
-            else fromDateTimePicker.Value = DateTime.Today;
+            if (dataGridView.SelectedRows[0].Cells[0].Value != null)
+            {
+                idTextBox.Text = dataGridView.SelectedRows[0].Cells[0].Value.ToString();
+                bookTextBox.Text = dataGridView.SelectedRows[0].Cells[1].Value.ToString();
+                authorTextBox.Text = dataGridView.SelectedRows[0].Cells[2].Value.ToString();
+                nameTextBox.Text = dataGridView.SelectedRows[0].Cells[3].Value.ToString();
+                lastNameTextBox.Text = dataGridView.SelectedRows[0].Cells[4].Value.ToString();
+                if (dataGridView.SelectedRows[0].Cells[5].Value.ToString() != "")
+                    fromDateTimePicker.Value = DateTime.ParseExact(dataGridView.SelectedRows[0].Cells[5].Value.ToString(), "d.M.yyyy", null);
+                else fromDateTimePicker.Value = DateTime.Today;
+            }
+            else
+            {
+                idTextBox.Text = "";
+                bookTextBox.Text = "";
+                authorTextBox.Text = "";
+                nameTextBox.Text = "";
+                lastNameTextBox.Text = "";
+                fromDateTimePicker.Value = DateTime.Today;
+            }
         }
         /// <summary>
         /// Tláčidlo pre rýchlo vrátenie knihy.
         /// Po stlačení tlačidla sa kniha označí ako vrátená.
+        /// Metóda je ošetrená aby nebolo možné vrátiť nevytvorenú knihu a aby nebolo možné vrátiť nepožičanú knihu.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -282,22 +296,34 @@ namespace TestovaciPriklad1
         {
             if (nameTextBox.Text != "" || lastNameTextBox.Text != "")
             {
-                DialogResult dialogResult = MessageBox.Show("Prajete si knihu " + bookTextBox.Text + " od " + authorTextBox.Text
-                + " označiť ako vrátenú ?", "Vrátiť knihu", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes) {
-                    int pom = 0;
-                    for (int i = 0; i < library.Count; i++)
-                    {
-                        if (library[i].id == int.Parse(idTextBox.Text)) pom = i;
-                    }
-                    library[pom] = (new Book(int.Parse(idTextBox.Text), bookTextBox.Text, authorTextBox.Text, new Borrowed("", "", "")));
-                    ulozDatabazu();
-                    nacitajDatabazu();
+                //Ošetrenie aby nebolo možné vrátiť nevytvorenú knihu
+                bool existuje = false;
+                foreach (Book b in library)
+                {
+                    if (b.Name.Equals(bookTextBox.Text) && b.Author.Equals(authorTextBox.Text)) existuje = true;
                 }
+                if (existuje)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Prajete si knihu " + bookTextBox.Text + " od " + authorTextBox.Text
+                    + " označiť ako vrátenú ?", "Vrátiť knihu", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        int pom = 0;
+                        for (int i = 0; i < library.Count; i++)
+                        {
+                            if (library[i].id == int.Parse(idTextBox.Text)) pom = i;
+                        }
+                        library[pom] = (new Book(int.Parse(idTextBox.Text), bookTextBox.Text, authorTextBox.Text, new Borrowed("", "", "")));
+                        ulozDatabazu();
+                        nacitajDatabazu();
+                    }
+                }
+                else MessageBox.Show("Kniha ešte nieje vytvorená v zozname.");
             }
             else {
                 MessageBox.Show("Zvolenú knihu nieje možné vrátiť.");
             }
         }
+        
     }
 }

@@ -43,6 +43,7 @@ namespace TestovaciPriklad1
             this.freeBookCheckBox = new System.Windows.Forms.CheckBox();
             this.borrowedBookCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.returnButton = new System.Windows.Forms.Button();
             this.fromDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
@@ -55,7 +56,6 @@ namespace TestovaciPriklad1
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.returnButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +89,7 @@ namespace TestovaciPriklad1
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(728, 241);
             this.dataGridView.TabIndex = 2;
-            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // id
             // 
@@ -201,6 +201,16 @@ namespace TestovaciPriklad1
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Editácia";
             // 
+            // returnButton
+            // 
+            this.returnButton.Location = new System.Drawing.Point(563, 68);
+            this.returnButton.Name = "returnButton";
+            this.returnButton.Size = new System.Drawing.Size(75, 23);
+            this.returnButton.TabIndex = 12;
+            this.returnButton.Text = "Vrátiť";
+            this.returnButton.UseVisualStyleBackColor = true;
+            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
+            // 
             // fromDateTimePicker
             // 
             this.fromDateTimePicker.Location = new System.Drawing.Point(492, 39);
@@ -301,16 +311,6 @@ namespace TestovaciPriklad1
             this.label2.Size = new System.Drawing.Size(18, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "ID";
-            // 
-            // returnButton
-            // 
-            this.returnButton.Location = new System.Drawing.Point(563, 68);
-            this.returnButton.Name = "returnButton";
-            this.returnButton.Size = new System.Drawing.Size(75, 23);
-            this.returnButton.TabIndex = 12;
-            this.returnButton.Text = "Vrátiť";
-            this.returnButton.UseVisualStyleBackColor = true;
-            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
             // 
             // HlavnaAplikacia
             // 
