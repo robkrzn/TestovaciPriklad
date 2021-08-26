@@ -131,11 +131,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>HlavnaAplikacia_Load<
 <tr class="memitem:a7e1479daea282712a47310092333c3fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_testovaci_priklad1_1_1_hlavna_aplikacia.html#a7e1479daea282712a47310092333c3fa">borrowedBookCheckBox_CheckedChanged</a> (object sender, EventArgs e)</td></tr>
 <tr class="memdesc:a7e1479daea282712a47310092333c3fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">ChceckBox pre zobrazenie záznamov s knihami ktoré sú požičáné.  <a href="class_testovaci_priklad1_1_1_hlavna_aplikacia.html#a7e1479daea282712a47310092333c3fa">More...</a><br /></td></tr>
 <tr class="separator:a7e1479daea282712a47310092333c3fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecdcd0bf4ec127543d700b188efbc094"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_testovaci_priklad1_1_1_hlavna_aplikacia.html#aecdcd0bf4ec127543d700b188efbc094">dataGridView_CellContentClick</a> (object sender, DataGridViewCellEventArgs e)</td></tr>
-<tr class="memdesc:aecdcd0bf4ec127543d700b188efbc094"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metóda ktorá vyplní údaje do TextBoxov pod tabulkou po zakliknutí príslušného objektu v tabulke.  <a href="class_testovaci_priklad1_1_1_hlavna_aplikacia.html#aecdcd0bf4ec127543d700b188efbc094">More...</a><br /></td></tr>
-<tr class="separator:aecdcd0bf4ec127543d700b188efbc094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc6dc47b37b9ef55e591d4d62a11481"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_testovaci_priklad1_1_1_hlavna_aplikacia.html#a2dc6dc47b37b9ef55e591d4d62a11481">dataGridView_CellClick</a> (object sender, DataGridViewCellEventArgs e)</td></tr>
+<tr class="memdesc:a2dc6dc47b37b9ef55e591d4d62a11481"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metóda ktorá vyplní údaje do TextBoxov pod tabulkou po zakliknutí príslušného objektu v tabulke. Po kliknutí na prázdny objekt sa Texboxy pod tabulkov vyprázdnia.  <a href="class_testovaci_priklad1_1_1_hlavna_aplikacia.html#a2dc6dc47b37b9ef55e591d4d62a11481">More...</a><br /></td></tr>
+<tr class="separator:a2dc6dc47b37b9ef55e591d4d62a11481"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb826f25584645cf691930509a8fa238"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_testovaci_priklad1_1_1_hlavna_aplikacia.html#aeb826f25584645cf691930509a8fa238">returnButton_Click</a> (object sender, EventArgs e)</td></tr>
-<tr class="memdesc:aeb826f25584645cf691930509a8fa238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tláčidlo pre rýchlo vrátenie knihy. Po stlačení tlačidla sa kniha označí ako vrátená.  <a href="class_testovaci_priklad1_1_1_hlavna_aplikacia.html#aeb826f25584645cf691930509a8fa238">More...</a><br /></td></tr>
+<tr class="memdesc:aeb826f25584645cf691930509a8fa238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tláčidlo pre rýchlo vrátenie knihy. Po stlačení tlačidla sa kniha označí ako vrátená. Metóda je ošetrená aby nebolo možné vrátiť nevytvorenú knihu a aby nebolo možné vrátiť nepožičanú knihu.  <a href="class_testovaci_priklad1_1_1_hlavna_aplikacia.html#aeb826f25584645cf691930509a8fa238">More...</a><br /></td></tr>
 <tr class="separator:aeb826f25584645cf691930509a8fa238"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab17b1dd85b5ffc6756370e2e4c3a6e50"><td class="memItemLeft" align="right" valign="top"><a id="ab17b1dd85b5ffc6756370e2e4c3a6e50" name="ab17b1dd85b5ffc6756370e2e4c3a6e50"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>InitializeComponent</b> ()</td></tr>
@@ -330,8 +330,8 @@ System.Windows.Forms.Button&#160;</td><td class="memItemRight" valign="bottom"><
 
 </div>
 </div>
-<a id="aecdcd0bf4ec127543d700b188efbc094" name="aecdcd0bf4ec127543d700b188efbc094"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecdcd0bf4ec127543d700b188efbc094">&#9670;&nbsp;</a></span>dataGridView_CellContentClick()</h2>
+<a id="a2dc6dc47b37b9ef55e591d4d62a11481" name="a2dc6dc47b37b9ef55e591d4d62a11481"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dc6dc47b37b9ef55e591d4d62a11481">&#9670;&nbsp;</a></span>dataGridView_CellClick()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -340,7 +340,7 @@ System.Windows.Forms.Button&#160;</td><td class="memItemRight" valign="bottom"><
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void TestovaciPriklad1.HlavnaAplikacia.dataGridView_CellContentClick </td>
+          <td class="memname">void TestovaciPriklad1.HlavnaAplikacia.dataGridView_CellClick </td>
           <td>(</td>
           <td class="paramtype">object&#160;</td>
           <td class="paramname"><em>sender</em>, </td>
@@ -364,7 +364,7 @@ System.Windows.Forms.Button&#160;</td><td class="memItemRight" valign="bottom"><
 </table>
 </div><div class="memdoc">
 
-<p>Metóda ktorá vyplní údaje do TextBoxov pod tabulkou po zakliknutí príslušného objektu v tabulke. </p>
+<p>Metóda ktorá vyplní údaje do TextBoxov pod tabulkou po zakliknutí príslušného objektu v tabulke. Po kliknutí na prázdny objekt sa Texboxy pod tabulkov vyprázdnia. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sender</td><td></td></tr>
@@ -606,7 +606,7 @@ System.Windows.Forms.Button&#160;</td><td class="memItemRight" valign="bottom"><
 </table>
 </div><div class="memdoc">
 
-<p>Tláčidlo pre rýchlo vrátenie knihy. Po stlačení tlačidla sa kniha označí ako vrátená. </p>
+<p>Tláčidlo pre rýchlo vrátenie knihy. Po stlačení tlačidla sa kniha označí ako vrátená. Metóda je ošetrená aby nebolo možné vrátiť nevytvorenú knihu a aby nebolo možné vrátiť nepožičanú knihu. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sender</td><td></td></tr>

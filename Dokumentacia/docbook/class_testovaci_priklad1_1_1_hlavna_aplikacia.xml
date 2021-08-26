@@ -74,13 +74,13 @@
 
 <para>ChceckBox pre zobrazenie záznamov s knihami ktoré sú požičáné. </para>
 </listitem>
-            <listitem><para>void <link linkend="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1aecdcd0bf4ec127543d700b188efbc094">dataGridView_CellContentClick</link> (object sender, DataGridViewCellEventArgs e)</para>
+            <listitem><para>void <link linkend="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a2dc6dc47b37b9ef55e591d4d62a11481">dataGridView_CellClick</link> (object sender, DataGridViewCellEventArgs e)</para>
 
-<para>Metóda ktorá vyplní údaje do TextBoxov pod tabulkou po zakliknutí príslušného objektu v tabulke. </para>
+<para>Metóda ktorá vyplní údaje do TextBoxov pod tabulkou po zakliknutí príslušného objektu v tabulke. Po kliknutí na prázdny objekt sa Texboxy pod tabulkov vyprázdnia. </para>
 </listitem>
             <listitem><para>void <link linkend="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1aeb826f25584645cf691930509a8fa238">returnButton_Click</link> (object sender, EventArgs e)</para>
 
-<para>Tláčidlo pre rýchlo vrátenie knihy. Po stlačení tlačidla sa kniha označí ako vrátená. </para>
+<para>Tláčidlo pre rýchlo vrátenie knihy. Po stlačení tlačidla sa kniha označí ako vrátená. Metóda je ošetrená aby nebolo možné vrátiť nevytvorenú knihu a aby nebolo možné vrátiť nepožičanú knihu. </para>
 </listitem>
             <listitem><para><anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1ab17b1dd85b5ffc6756370e2e4c3a6e50"/>void <emphasis role="strong">InitializeComponent</emphasis> ()</para>
 
@@ -228,13 +228,13 @@ Parameters</title>
                 </formalpara>
                 </para>
 </section>
-<anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1aecdcd0bf4ec127543d700b188efbc094"/><section>
-    <title>dataGridView_CellContentClick()</title>
-<indexterm><primary>dataGridView_CellContentClick</primary><secondary>TestovaciPriklad1.HlavnaAplikacia</secondary></indexterm>
-<indexterm><primary>TestovaciPriklad1.HlavnaAplikacia</primary><secondary>dataGridView_CellContentClick</secondary></indexterm>
-<para><computeroutput>void TestovaciPriklad1.HlavnaAplikacia.dataGridView_CellContentClick (object sender, DataGridViewCellEventArgs e)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+<anchor xml:id="_class_testovaci_priklad1_1_1_hlavna_aplikacia_1a2dc6dc47b37b9ef55e591d4d62a11481"/><section>
+    <title>dataGridView_CellClick()</title>
+<indexterm><primary>dataGridView_CellClick</primary><secondary>TestovaciPriklad1.HlavnaAplikacia</secondary></indexterm>
+<indexterm><primary>TestovaciPriklad1.HlavnaAplikacia</primary><secondary>dataGridView_CellClick</secondary></indexterm>
+<para><computeroutput>void TestovaciPriklad1.HlavnaAplikacia.dataGridView_CellClick (object sender, DataGridViewCellEventArgs e)<computeroutput>[private]</computeroutput></computeroutput></para><para>
 
-<para>Metóda ktorá vyplní údaje do TextBoxov pod tabulkou po zakliknutí príslušného objektu v tabulke. </para>
+<para>Metóda ktorá vyplní údaje do TextBoxov pod tabulkou po zakliknutí príslušného objektu v tabulke. Po kliknutí na prázdny objekt sa Texboxy pod tabulkov vyprázdnia. </para>
 </para>
 
 <para>
@@ -408,7 +408,7 @@ Parameters</title>
 <indexterm><primary>TestovaciPriklad1.HlavnaAplikacia</primary><secondary>returnButton_Click</secondary></indexterm>
 <para><computeroutput>void TestovaciPriklad1.HlavnaAplikacia.returnButton_Click (object sender, EventArgs e)<computeroutput>[private]</computeroutput></computeroutput></para><para>
 
-<para>Tláčidlo pre rýchlo vrátenie knihy. Po stlačení tlačidla sa kniha označí ako vrátená. </para>
+<para>Tláčidlo pre rýchlo vrátenie knihy. Po stlačení tlačidla sa kniha označí ako vrátená. Metóda je ošetrená aby nebolo možné vrátiť nevytvorenú knihu a aby nebolo možné vrátiť nepožičanú knihu. </para>
 </para>
 
 <para>

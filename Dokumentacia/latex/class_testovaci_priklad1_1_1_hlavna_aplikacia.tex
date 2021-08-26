@@ -47,10 +47,10 @@ void \mbox{\hyperlink{class_testovaci_priklad1_1_1_hlavna_aplikacia_a6ea868fe7a4
 \begin{DoxyCompactList}\small\item\em Check\+Box pre zobrazenie záznamov s knihami ktoré sú k dispozícii v knižnici. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_testovaci_priklad1_1_1_hlavna_aplikacia_a7e1479daea282712a47310092333c3fa}{borrowed\+Book\+Check\+Box\+\_\+\+Checked\+Changed}} (object sender, Event\+Args e)
 \begin{DoxyCompactList}\small\item\em Chceck\+Box pre zobrazenie záznamov s knihami ktoré sú požičáné. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_testovaci_priklad1_1_1_hlavna_aplikacia_aecdcd0bf4ec127543d700b188efbc094}{data\+Grid\+View\+\_\+\+Cell\+Content\+Click}} (object sender, Data\+Grid\+View\+Cell\+Event\+Args e)
-\begin{DoxyCompactList}\small\item\em Metóda ktorá vyplní údaje do Text\+Boxov pod tabulkou po zakliknutí príslušného objektu v tabulke. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_testovaci_priklad1_1_1_hlavna_aplikacia_a2dc6dc47b37b9ef55e591d4d62a11481}{data\+Grid\+View\+\_\+\+Cell\+Click}} (object sender, Data\+Grid\+View\+Cell\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Metóda ktorá vyplní údaje do Text\+Boxov pod tabulkou po zakliknutí príslušného objektu v tabulke. Po kliknutí na prázdny objekt sa Texboxy pod tabulkov vyprázdnia. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_testovaci_priklad1_1_1_hlavna_aplikacia_aeb826f25584645cf691930509a8fa238}{return\+Button\+\_\+\+Click}} (object sender, Event\+Args e)
-\begin{DoxyCompactList}\small\item\em Tláčidlo pre rýchlo vrátenie knihy. Po stlačení tlačidla sa kniha označí ako vrátená. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Tláčidlo pre rýchlo vrátenie knihy. Po stlačení tlačidla sa kniha označí ako vrátená. Metóda je ošetrená aby nebolo možné vrátiť nevytvorenú knihu a aby nebolo možné vrátiť nepožičanú knihu. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_ab17b1dd85b5ffc6756370e2e4c3a6e50}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_ab17b1dd85b5ffc6756370e2e4c3a6e50}} 
 void {\bfseries Initialize\+Component} ()
 \begin{DoxyCompactList}\small\item\em Required method for Designer support -\/ do not modify the contents of this method with the code editor. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -187,15 +187,15 @@ Chceck\+Box pre zobrazenie záznamov s knihami ktoré sú požičáné.
 {\em e} & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_aecdcd0bf4ec127543d700b188efbc094}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_aecdcd0bf4ec127543d700b188efbc094}} 
-\index{TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}!dataGridView\_CellContentClick@{dataGridView\_CellContentClick}}
-\index{dataGridView\_CellContentClick@{dataGridView\_CellContentClick}!TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}}
-\doxysubsubsection{\texorpdfstring{dataGridView\_CellContentClick()}{dataGridView\_CellContentClick()}}
-{\footnotesize\ttfamily void Testovaci\+Priklad1.\+Hlavna\+Aplikacia.\+data\+Grid\+View\+\_\+\+Cell\+Content\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Data\+Grid\+View\+Cell\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{class_testovaci_priklad1_1_1_hlavna_aplikacia_a2dc6dc47b37b9ef55e591d4d62a11481}\label{class_testovaci_priklad1_1_1_hlavna_aplikacia_a2dc6dc47b37b9ef55e591d4d62a11481}} 
+\index{TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}!dataGridView\_CellClick@{dataGridView\_CellClick}}
+\index{dataGridView\_CellClick@{dataGridView\_CellClick}!TestovaciPriklad1.HlavnaAplikacia@{TestovaciPriklad1.HlavnaAplikacia}}
+\doxysubsubsection{\texorpdfstring{dataGridView\_CellClick()}{dataGridView\_CellClick()}}
+{\footnotesize\ttfamily void Testovaci\+Priklad1.\+Hlavna\+Aplikacia.\+data\+Grid\+View\+\_\+\+Cell\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Data\+Grid\+View\+Cell\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Metóda ktorá vyplní údaje do Text\+Boxov pod tabulkou po zakliknutí príslušného objektu v tabulke. 
+Metóda ktorá vyplní údaje do Text\+Boxov pod tabulkou po zakliknutí príslušného objektu v tabulke. Po kliknutí na prázdny objekt sa Texboxy pod tabulkov vyprázdnia. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -291,7 +291,7 @@ Obslužná metóda tláčidla vymazať. Vybraný objekt sa po stlačení vymaže
 
 
 
-Tláčidlo pre rýchlo vrátenie knihy. Po stlačení tlačidla sa kniha označí ako vrátená. 
+Tláčidlo pre rýchlo vrátenie knihy. Po stlačení tlačidla sa kniha označí ako vrátená. Metóda je ošetrená aby nebolo možné vrátiť nevytvorenú knihu a aby nebolo možné vrátiť nepožičanú knihu. 
 
 
 \begin{DoxyParams}{Parameters}
