@@ -4,7 +4,7 @@
 <indexterm><primary>TestovaciPriklad1.Book</primary></indexterm>
 <para>
 
-<para>Trieda s informáciami o knihe. </para>
+<para>Trieda pre objekt s informáciami o knihe. </para>
  
 </para>
 <simplesect>
@@ -44,7 +44,7 @@
 <section>
 <title>Detailed Description</title>
 
-<para>Trieda s informáciami o knihe. </para>
+<para>Trieda pre objekt s informáciami o knihe. </para>
 </section>
 <section>
 <title>Constructor &amp; Destructor Documentation</title>
@@ -96,5 +96,5 @@ Parameters</title>
 </section>
 <para>
 The documentation for this class was generated from the following file:</para>
-TestovaciPriklad1/Book.cs</section>
+C:/Users/rober/source/repos/TestovaciPriklad1/TestovaciPriklad1/Book.cs</section>
 </section>

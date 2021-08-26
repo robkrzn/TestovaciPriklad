@@ -41,7 +41,7 @@ namespace TestovaciPriklad1
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(172, 127);
+            this.loginButton.Location = new System.Drawing.Point(168, 113);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(75, 23);
             this.loginButton.TabIndex = 0;
@@ -53,7 +53,7 @@ namespace TestovaciPriklad1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 47);
+            this.label1.Location = new System.Drawing.Point(27, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 15);
             this.label1.TabIndex = 1;
@@ -62,7 +62,7 @@ namespace TestovaciPriklad1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 90);
+            this.label2.Location = new System.Drawing.Point(27, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 15);
             this.label2.TabIndex = 2;
@@ -70,23 +70,24 @@ namespace TestovaciPriklad1
             // 
             // loginTextBox
             // 
-            this.loginTextBox.Location = new System.Drawing.Point(97, 44);
+            this.loginTextBox.Location = new System.Drawing.Point(93, 30);
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(150, 23);
             this.loginTextBox.TabIndex = 3;
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(97, 87);
+            this.passwordTextBox.Location = new System.Drawing.Point(93, 73);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(150, 23);
             this.passwordTextBox.TabIndex = 4;
+            this.passwordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTextBox_KeyDown);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 197);
+            this.ClientSize = new System.Drawing.Size(273, 159);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.loginTextBox);
             this.Controls.Add(this.label2);

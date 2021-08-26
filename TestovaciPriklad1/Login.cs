@@ -57,5 +57,17 @@ namespace TestovaciPriklad1
             }
             else MessageBox.Show("Je zadane zle meno");
         }
+        /// <summary>
+        /// Pri stlačení klávesy enter pri písaní hesla automaticky stlačí tlačidlo login.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginButton_Click(this, new EventArgs());
+            }
+        }
     }
 }

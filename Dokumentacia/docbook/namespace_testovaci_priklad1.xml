@@ -7,7 +7,7 @@
         <itemizedlist>
             <listitem><para>class <link linkend="_class_testovaci_priklad1_1_1_book">Book</link></para>
 
-<para>Trieda s informáciami o knihe. </para>
+<para>Trieda pre objekt s informáciami o knihe. </para>
 </listitem>
             <listitem><para>class <link linkend="_class_testovaci_priklad1_1_1_borrowed">Borrowed</link></para>
 

@@ -26,10 +26,8 @@ namespace TestovaciPriklad1
             InitializeComponent();
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             Encoding.GetEncoding("windows-1250");
+            //this.file = @"C:\Users\rober\source\repos\TestovaciPriklad1\TestovaciPriklad1\Library.xml";
             this.file = System.Configuration.ConfigurationManager.AppSettings["file"];
-
-            //Login login = new Login();
-            //login.ShowDialog();
 
             nacitajDatabazu();
         }
@@ -178,7 +176,7 @@ namespace TestovaciPriklad1
                 for(int i =0; i < library.Count; i++) {
                     if (library[i].id == int.Parse(idTextBox.Text)) pom = i;
                 }
-                DialogResult dialogResult = MessageBox.Show("Naozaj cheš odstrániť záznam: " + library[pom].Name + " od  "+library[pom].Author
+                DialogResult dialogResult = MessageBox.Show("Naozaj si prajete odstrániť záznam: " + library[pom].Name + " od  "+library[pom].Author
                 + " ?", "Odstrániť záznam", MessageBoxButtons.YesNo); 
                 if (dialogResult == DialogResult.Yes)
                 {
@@ -190,7 +188,7 @@ namespace TestovaciPriklad1
             }
             else
             {
-                MessageBox.Show("Nevybral si žiadny záznam");
+                MessageBox.Show("Nieje vybraný žiadny záznam");
             }
         }
         /// <summary>
@@ -218,7 +216,7 @@ namespace TestovaciPriklad1
                 MessageBox.Show("Záznam bol upravený");
             }
             else
-                MessageBox.Show("Nevybral si žiadny záznam");
+                MessageBox.Show("Nieje vybraný žiadny záznam");
         }
         /// <summary>
         /// Metóda pre zistenie súčasného najväčšieho ID.
@@ -259,7 +257,7 @@ namespace TestovaciPriklad1
             nacitajDatabazu();
         }
         /// <summary>
-        /// Po zakliknutí objektu v tabulke sa zobrazia dáta do TextBoxov pod tabulkou
+        /// Metóda ktorá vyplní údaje do TextBoxov pod tabulkou po zakliknutí príslušného objektu v tabulke.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
